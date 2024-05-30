@@ -1,0 +1,27 @@
+# Désactive l'indexation des répertoires par le serveur web
+Options All -Indexes
+
+<IfModule mod_rewrite.c>
+  # Active le module de réécriture d'URL
+  RewriteEngine On
+
+  # Redirige vers le dossier public
+  # Cette règle réécrit toutes les requêtes à la racine ("/") vers le dossier "public/"
+  RewriteRule ^$ public/ [L]
+
+  # Cette règle réécrit toutes les requêtes vers le dossier "public/"
+  # Par exemple, une requête vers "/images/image.jpg" serait réécrite en "/public/images/image.jpg"
+  RewriteRule (.*) public/$1 [L]
+
+  # Les lignes suivantes sont commentées, mais si elles étaient décommentées, elles redirigeraient toutes les requêtes HTTP vers HTTPS
+  # Active le module de réécriture d'URL
+  # RewriteEngine On
+
+  # Cette condition vérifie si la requête n'est pas déjà en HTTPS
+  # RewriteCond %{HTTPS} off
+
+  # Si la condition ci-dessus est vraie (c'est-à-dire que la requête n'est pas en HTTPS),
+  # alors la requête est réécrite pour utiliser HTTPS.
+  # L'option R=301 signifie que c'est une redirection permanente.
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
