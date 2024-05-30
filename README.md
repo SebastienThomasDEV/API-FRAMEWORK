@@ -1,6 +1,6 @@
 
 
-# Sthom Back - API Framework
+# API Framework
 
 ## Introduction
 
