@@ -83,6 +83,7 @@ class Route
      */
     private function validateRequestType(string $requestType): void
     {
+        $requestType = strtoupper($requestType);
         if (!in_array($requestType, self::$validRequestTypes)) {
             throw new \InvalidArgumentException('Invalid request method');
         }

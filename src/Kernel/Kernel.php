@@ -88,6 +88,9 @@ class Kernel
         $this->app = AppFactory::create();
         $isDevMode = $_ENV['APP_ENV'] === self::ENV_DEV;
         $this->app->addErrorMiddleware($isDevMode, $isDevMode, $isDevMode);
+        $this->app->options('/{routes:.+}', function (ServerRequest $request, ServerResponse $response) {
+            return $response;
+        });
     }
 
     /**
@@ -98,9 +101,7 @@ class Kernel
     private function configureMiddlewares(): void
     {
         $this->app->add(new JwtMiddleware());
-        $this->app->options('/{routes:.+}', function (ServerRequest $serverRequest, ServerResponse $response) {
-            return $response;
-        });
+        $this->app->addRoutingMiddleware();
     }
 
     /**
@@ -126,7 +127,7 @@ class Kernel
     private function configureRoute(Route $route): void
     {
         $requestType = $route->getRequestType();
-        $path = $route->getPath();
+        $path = $route->getPath();;
         $this->app->{$requestType}($path, function (ServerRequest $serverRequest, ServerResponse $serverResponse) use ($route) {
             try {
                 Request::getInstance()->configure($serverRequest);
@@ -158,6 +159,13 @@ class Kernel
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
             ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With')
             ->withHeader('Access-Control-Max-Age', '86400');
+    }
+
+    public final function addOptionsRoute(): void
+    {
+        $this->app->options('/{routes:.+}', function (ServerRequest $serverRequest, ServerResponse $response) {
+            return $response;
+        });
     }
 
     /**

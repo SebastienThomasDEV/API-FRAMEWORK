@@ -32,7 +32,7 @@ abstract class AbstractRepository
      *
      * @return SqlFn Instance de SqlFn.
      */
-    protected function customQuery(): SqlFn
+    protected final function customQuery(): SqlFn
     {
         return $this->sqlFn;
     }
@@ -43,13 +43,12 @@ abstract class AbstractRepository
      * @param int $id L'identifiant de l'entité.
      * @return array|null Les données de l'entité ou null si non trouvée.
      */
-    public function find(int $id): ?array
+    public final function find(int $id): ?array
     {
         $query = $this->customQuery()
             ->select($this->getTableName())
             ->where('id', '=', $id)
             ->execute();
-
         return $query[0] ?? null;
     }
 
@@ -60,7 +59,7 @@ abstract class AbstractRepository
      * @param string $value La valeur du champ.
      * @return array|null Les données de l'entité ou null si non trouvée.
      */
-    public function findOneBy(string $field, string $value): ?array
+    public final function findOneBy(string $field, string $value): ?array
     {
         $query = $this->customQuery()
             ->select($this->getTableName())
@@ -77,7 +76,7 @@ abstract class AbstractRepository
      * @param string $value La valeur du champ.
      * @return array|null Les données de l'entité ou null si non trouvée.
      */
-    public function findBy(string $field, string $value): ?array
+    public final function findBy(string $field, string $value): ?array
     {
         $query = $this->customQuery()
             ->select($this->getTableName())
@@ -95,7 +94,7 @@ abstract class AbstractRepository
      *
      * @return array La liste des entités.
      */
-    public function findAll(): array
+    public final function findAll(): array
     {
         return $this->customQuery()
             ->select($this->getTableName())
@@ -108,7 +107,7 @@ abstract class AbstractRepository
      * @param array $data Les données de l'entité.
      * @return int L'identifiant de l'entité sauvegardée.
      */
-    public function save(array $data): int
+    public final function save(array $data): int
     {
         if (isset($data['id'])) {
             $this->customQuery()
@@ -130,6 +129,22 @@ abstract class AbstractRepository
     {
         return $this->customQuery()
                 ->delete($this->getTableName(), $id) > 0;
+    }
+
+    /**
+     * Supprime une entité par un champ spécifique.
+     *
+     * @param string $field Le champ à rechercher.
+     * @param string $value La valeur du champ.
+     * @return bool Vrai si la suppression a réussi, faux sinon.
+     */
+    public function arrayToObj(array $data): object
+    {
+        $obj = new $this->entity();
+        foreach ($data as $key => $value) {
+            $obj->$key = $value;
+        }
+        return $obj;
     }
 
     /**

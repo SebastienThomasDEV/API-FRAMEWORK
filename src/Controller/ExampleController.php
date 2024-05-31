@@ -47,7 +47,7 @@ class ExampleController extends AbstractController
      * Vous pouvez également renvoyer des données au client.
      *
      */
-    #[Route(path: '/', requestType: 'POST', guarded: false)]
+    #[Route(path: '/test', requestType: 'get', guarded: false)]
     public final function post(Request $request): array
     {
         $body = $request->getBody();
@@ -60,13 +60,13 @@ class ExampleController extends AbstractController
      * Vous pouvez également utiliser des paramètres dans vos routes.
      * Par exemple, vous pouvez passer un nom dans l'URL et le récupérer dans votre méthode.
      *
-     * Pour récupérer un paramètre, vous pouvez utiliser la méthode getArg() de la requête.
+     * Pour récupérer un paramètre, vous pouvez utiliser la méthode getAttribute de la requête.
      * Le service Request posséde plusieurs méthodes pour accéder aux données de la requête.
      *
      * listes des méthodes:
      *
-     * - getArg(string $name): récupère un paramètre de la route
-     * - getArgs(): récupère tous les paramètres de la route
+     * - getAttribute(string $name): récupère un paramètre de la route
+     * - getAttributes(): récupère tous les paramètres de la route
      * - getBody(): récupère les données envoyées par le client
      * - getFiles(): récupère les fichiers envoyés par le client
      * - getHeaders(): récupère les en-têtes de la requête
@@ -77,7 +77,7 @@ class ExampleController extends AbstractController
     #[Route(path: '/arg/{name}', requestType: 'GET', guarded: false)]
     public final function arg(Request $request): array
     {
-        $name = $request->getArg('name');
+        $name = $request->getAttribute('name');
         return $this->send([
             'message' => 'Hello ' . $name,
         ]);
@@ -191,8 +191,7 @@ class ExampleController extends AbstractController
     {
         $id = $request->getAttribute('id');
         $user = $userRepository->find($id);
-        $user->setNom('toto');
-        $user->setPrenom('titi');
+        $user->setNom($request->getAttribute('name'));
         $userRepository->save($user);
         return $this->send([
             'message' => "L'utilisateur a été mis à jour",
