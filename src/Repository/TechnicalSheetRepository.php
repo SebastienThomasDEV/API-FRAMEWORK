@@ -4,11 +4,12 @@ namespace Sthom\Back\Repository;
 
 use Sthom\Back\Kernel\Framework\AbstractRepository;
 
-class UserRepository extends AbstractRepository
+class TechnicalSheetRepository extends AbstractRepository
 {
     protected function getTableName(): string
     {
-        return 'user';
+        return 'technical_sheet';
     }
+    
 
 }

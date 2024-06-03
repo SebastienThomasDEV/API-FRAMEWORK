@@ -43,13 +43,13 @@ abstract class AbstractRepository
      * @param int $id L'identifiant de l'entité.
      * @return array|null Les données de l'entité ou null si non trouvée.
      */
-    public final function find(int $id): ?array
+    public final function find(int $id): ?object
     {
         $query = $this->customQuery()
             ->select($this->getTableName())
             ->where('id', '=', $id)
-            ->execute();
-        return $query[0] ?? null;
+            ->execute()[0] ?? [];
+        return $this->hydrate($query) ?? null;
     }
 
     /**
@@ -59,14 +59,14 @@ abstract class AbstractRepository
      * @param string $value La valeur du champ.
      * @return array|null Les données de l'entité ou null si non trouvée.
      */
-    public final function findOneBy(string $field, string $value): ?array
+    public final function findOneBy(string $field, string $value): ?object
     {
         $query = $this->customQuery()
             ->select($this->getTableName())
             ->where($field, '=', $value)
-            ->execute();
+            ->execute()[0] ?? [];
 
-        return $query[0] ?? null;
+        return $this->hydrate($query) ?? null;
     }
 
     /**
@@ -78,14 +78,41 @@ abstract class AbstractRepository
      */
     public final function findBy(string $field, string $value): ?array
     {
-        $query = $this->customQuery()
+
+        $result =  $this->customQuery()
             ->select($this->getTableName())
             ->where($field, '=', $value)
             ->execute();
 
-        return $query ?? null;
+        $entities = [];
+        foreach ($result as $data) {
+            $entities[] = $this->hydrate($data);
+        }
+        return $entities;
     }
 
+    public final function getEntityNamespace(): string
+    {
+        $entityClassname = explode('\\', get_called_class());
+        $entityClassname = end($entityClassname);
+        $entityClassname = str_replace('Repository', '', $entityClassname);
+        return 'Sthom\Back\Entity\\' . $entityClassname;
+    }
+
+
+    private function hydrate(array $data): object
+    {
+        $entityClassname = $this->getEntityNamespace();
+        $reflection = new \ReflectionClass($entityClassname);
+        $entity = $reflection->newInstance();
+        $properties = $reflection->getProperties();
+        foreach ($properties as $property) {
+            $property->setAccessible(true);
+            $propertyName = $property->getName();
+            $property->setValue($entity, $data[$propertyName]);
+        }
+        return $entity;
+    }
 
 
 
@@ -96,9 +123,16 @@ abstract class AbstractRepository
      */
     public final function findAll(): array
     {
-        return $this->customQuery()
+
+        $result =  $this->customQuery()
             ->select($this->getTableName())
             ->execute();
+
+        $entities = [];
+        foreach ($result as $data) {
+            $entities[] = $this->hydrate($data);
+        }
+        return $entities;
     }
 
     /**
@@ -107,8 +141,9 @@ abstract class AbstractRepository
      * @param array $data Les données de l'entité.
      * @return int L'identifiant de l'entité sauvegardée.
      */
-    public final function save(array $data): int
+    public final function save(object $data): int
     {
+        $data = $data->toArray();
         if (isset($data['id'])) {
             $this->customQuery()
                 ->update($this->getTableName(), $data, $data['id']);
@@ -131,21 +166,8 @@ abstract class AbstractRepository
                 ->delete($this->getTableName(), $id) > 0;
     }
 
-    /**
-     * Supprime une entité par un champ spécifique.
-     *
-     * @param string $field Le champ à rechercher.
-     * @param string $value La valeur du champ.
-     * @return bool Vrai si la suppression a réussi, faux sinon.
-     */
-    public function arrayToObj(array $data): object
-    {
-        $obj = new $this->entity();
-        foreach ($data as $key => $value) {
-            $obj->$key = $value;
-        }
-        return $obj;
-    }
+
+
 
     /**
      * Retourne le nom de la table associée au repository.

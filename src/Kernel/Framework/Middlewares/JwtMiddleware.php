@@ -54,10 +54,12 @@ class JwtMiddleware implements MiddlewareInterface
             if (!$jwt->isValid($request)) {
                 return $this->handleError($request, $handler, self::ERROR_INVALID_TOKEN);
             }
+
             $model = Model::getInstance();
             $identifier = $_ENV['JWT_USER_IDENTIFIER'];
             $table = $_ENV['JWT_USER_TABLE'];
             $jwtPayload = $jwt->getPayload($request);
+
             if (isset($jwtPayload[$identifier])) {
                 $user = $model
                     ->buildQuery()

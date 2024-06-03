@@ -17,15 +17,23 @@ abstract class AbstractController
      * @param array $data Les données à envoyer.
      * @return array Les données préparées.
      */
-    public final function send(array $data): array
+    public final function send(mixed $data): array
     {
-        array_walk_recursive($data, function (&$value) {
-            if (is_object($value)) {
-                $value = $this->objectToArray($value);
-            }
-        });
+        if (is_object($data)) {
+            $data = $this->objectToArray($data);
+        } elseif (is_array($data)) {
+            array_walk_recursive($data, function (&$value) {
+                if (is_object($value)) {
+                    $value = $this->objectToArray($value);
+                }
+            });
+        } else {
+            $data = [];
+        }
         return $data;
     }
+
+
 
     /**
      * Convertit un objet en tableau associatif.

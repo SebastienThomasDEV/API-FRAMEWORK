@@ -1,7 +1,5 @@
 <?php
 
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-use Sthom\Back\Repository\UserRepository;
 
 const ENTITY_TEMPLATE = <<<EOT
 <?php

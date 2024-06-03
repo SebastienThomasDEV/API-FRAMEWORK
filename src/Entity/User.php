@@ -1,72 +1,88 @@
 <?php
 
-
 namespace Sthom\Back\Entity;
 
-class User
+use Sthom\Back\Kernel\Framework\Utils\EntityInterface;
+use Sthom\Back\Kernel\Framework\Utils\UserInterface;
+
+class User implements UserInterface, EntityInterface
 {
     private ?int $id = null;
-    private ?string $email = null;
-    private ?string $nom = null;
-    private ?string $prenom = null;
-    private ?string $roles = null;
-    private ?string $mdp = null;
-    public final function getId(): ?int
+    private ?string $roles;
+    private ?string $email;
+    private ?string $surname;
+    private ?string $name;
+    private ?string $pwd;
+
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public final function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public final function setEmail(string $email): void
-    {
-        $this->email = $email;
-    }
-
-    public final function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
-    public final function setNom(string $nom): void
-    {
-        $this->nom = $nom;
-    }
-
-    public final function getPrenom(): ?string
-    {
-        return $this->prenom;
-    }
-
-    public final function setPrenom(string $prenom): void
-    {
-        $this->prenom = $prenom;
-    }
-
-    public final function getRoles(): ?string
+    public function getRoles(): string
     {
         return $this->roles;
     }
 
-    public final function setRoles(string $roles): void
+    public function setRoles(string $roles): void
     {
         $this->roles = $roles;
     }
 
-    public final function getMdp(): ?string
+    public function getEmail(): string
     {
-        return $this->mdp;
+        return $this->email;
     }
 
-    public final function setMdp(string $mdp): void
+    public function setEmail(string $email): void
     {
-        $this->mdp = $mdp;
+        $this->email = $email;
     }
 
+    public function getSurname(): string
+    {
+        return $this->surname;
+    }
 
+    public function setSurname(string $surname): void
+    {
+        $this->surname = $surname;
+    }
 
+    public function getName(): string
+    {
+        return $this->name;
+    }
 
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    public function getPwd(): string
+    {
+        return $this->pwd;
+    }
+
+    public function setPwd(string $pwd): void
+    {
+        $this->pwd = $pwd;
+    }
+
+    public final function getIdentifier(): ?string
+    {
+        return $this->email;
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'roles' => $this->roles,
+            'email' => $this->email,
+            'surname' => $this->surname,
+            'name' => $this->name,
+            'pwd' => $this->pwd,
+        ];
+    }
 }

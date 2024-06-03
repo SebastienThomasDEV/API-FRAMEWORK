@@ -88,9 +88,7 @@ class Kernel
         $this->app = AppFactory::create();
         $isDevMode = $_ENV['APP_ENV'] === self::ENV_DEV;
         $this->app->addErrorMiddleware($isDevMode, $isDevMode, $isDevMode);
-        $this->app->options('/{routes:.+}', function (ServerRequest $request, ServerResponse $response) {
-            return $response;
-        });
+        $this->addOptionsRoute();
     }
 
     /**
@@ -164,7 +162,10 @@ class Kernel
     public final function addOptionsRoute(): void
     {
         $this->app->options('/{routes:.+}', function (ServerRequest $serverRequest, ServerResponse $response) {
-            return $response;
+            return $this->addCorsHeaders($response);
+        });
+        $this->app->options('/', function (ServerRequest $serverRequest, ServerResponse $response) {
+            return $this->addCorsHeaders($response);
         });
     }
 
