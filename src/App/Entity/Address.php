@@ -2,36 +2,46 @@
 
 namespace Sthom\Back\App\Entity;
 
-use Sthom\Back\Kernel\Framework\Annotations\Mapper\Column;
-use Sthom\Back\Kernel\Framework\Annotations\Mapper\Entity;
-use Sthom\Back\Kernel\Framework\Annotations\Mapper\Relations\ManyToOne;
+use Sthom\Back\App\Repository\AddressRepository;
+use Sthom\Back\Kernel\Framework\Annotations\Orm\Entity;
 use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 
 
-#[Entity(table: 'address')]
+
+#[Entity(table: 'address', repository: AddressRepository::class)]
 class Address implements EntityInterface
 {
 
-    #[Column(name: 'id', type: 'int')]
+
     private ?int $id = null;
 
-    #[Column(name: 'street', type: 'string')]
+
     private ?string $street = null;
 
-    #[Column(name: 'street_number', type: 'string')]
+
     private ?int $streetNumber = null;
 
-    #[Column(name: 'zip_code', type: 'int')]
+
     private ?int $zipCode = null;
 
-    #[Column(name: 'town', type: 'string')]
+
     private ?string $town = null;
 
-    #[Column(name: 'address_complement', type: 'string')]
+
     private ?string $addressComplement = null;
 
-    #[ManyToOne(columnName: 'user_id', mappedBy:User::class)]
     private ?int $userId = null;
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->street = $data['street'] ?? null;
+        $this->streetNumber = $data['streetNumber'] ?? null;
+        $this->zipCode = $data['zipCode'] ?? null;
+        $this->town = $data['town'] ?? null;
+        $this->addressComplement = $data['addressComplement'] ?? null;
+        $this->userId = $data['userId'] ?? null;
+    }
 
     public function getId(): ?int
     {

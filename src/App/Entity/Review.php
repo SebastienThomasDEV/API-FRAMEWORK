@@ -2,22 +2,31 @@
 
 namespace Sthom\Back\App\Entity;
 
-use Sthom\Back\Kernel\Framework\Annotations\Mapper\Column;
-use Sthom\Back\Kernel\Framework\Annotations\Mapper\Entity;
+use Sthom\Back\App\Repository\ReviewRepository;
+use Sthom\Back\Kernel\Framework\Annotations\Orm\Entity;
 use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 
-#[Entity(table: 'reseller')]
+
+#[Entity(table: 'review', repository: ReviewRepository::class)]
 class Review implements EntityInterface
 {
 
-    #[Column(name: 'id', type: 'int')]
+
     private ?int $id = null;
 
-    #[Column(name: 'comment', type: 'string')]
+
     private ?string $comment;
 
-    #[Column(name: 'rating', type: 'int')]
+
     private ?int $rating;
+
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->comment = $data['comment'] ?? null;
+        $this->rating = $data['rating'] ?? null;
+    }
 
     public function getId(): ?int
     {

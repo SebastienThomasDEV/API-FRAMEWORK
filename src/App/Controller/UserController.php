@@ -63,7 +63,7 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route(path: '/users', requestType: 'GET', guarded: true)]
+    #[Route(path: '/users', requestType: 'GET', guarded: false)]
     public final function showAll(UserRepository $userRepository): array
     {
         $users = $userRepository->findAll();
@@ -79,12 +79,13 @@ class UserController extends AbstractController
     }
 
     #[Route(path: '/', requestType: 'GET', guarded: false)]
-    public final function showdsq(UserRepository $userRepository, Request $request): array
+    public final function index(UserRepository $userRepository): array
     {
-
+        dd($userRepository->findAll());
         return $this->send([
-            'message' => 'User created',
+            'message' => 'Welcome to the user controller',
         ]);
     }
+
 
 }

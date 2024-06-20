@@ -35,7 +35,7 @@ class SqlFn implements SqlFnInterface
 
     private function generatePlaceholder(string $field): string
     {
-        return str_replace('.', '_', $field) . uniqid('_', true);
+        return uniqid($field);
     }
 
     private function addCondition(string $type, string $field, string $operator, $value): SqlFnInterface
@@ -131,9 +131,14 @@ class SqlFn implements SqlFnInterface
         return $this;
     }
 
-    public function execute(): array
+    public final function execute(): array
     {
         try {
+            foreach ($this->bindParams as $key => $value) {
+                if (is_bool($value)) {
+                    $this->bindParams[$key] = $value ? 1 : 0;
+                }
+            }
             $this->logQuery($this->statement, $this->bindParams);
             $stmt = $this->connection->prepare($this->statement);
             $stmt->execute($this->bindParams);
@@ -177,7 +182,6 @@ class SqlFn implements SqlFnInterface
             $this->statement = "UPDATE $table SET $setClause WHERE id = :id";
             $data['id'] = $id;
             $this->bindParams = $data;
-
             $this->logQuery($this->statement, $this->bindParams);
             $stmt = $this->connection->prepare($this->statement);
             $stmt->execute($this->bindParams);
@@ -255,7 +259,7 @@ class SqlFn implements SqlFnInterface
         return $this;
     }
 
-    public function executeTransaction(callable $callback): void
+    public final function executeTransaction(callable $callback): void
     {
         try {
             $this->connection->beginTransaction();
@@ -270,7 +274,7 @@ class SqlFn implements SqlFnInterface
     private function logError(\Exception $e): void
     {
         // Assuming a Logger instance is available
-        Logger::error($e->getMessage(), ['exception' => $e]);
+        Logger::error($e->getMessage());
     }
 
     private function logQuery(string $query, array $params): void

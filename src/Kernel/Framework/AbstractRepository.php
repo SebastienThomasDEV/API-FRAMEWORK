@@ -6,6 +6,7 @@ use InvalidArgumentException;
 use PDO;
 use PDOException;
 use Psr\Log\LoggerInterface;
+use Sthom\Back\Kernel\Framework\Annotations\Orm\Entity;
 use Sthom\Back\Kernel\Framework\Model\Exceptions\QueryExecutionException;
 use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 use Sthom\Back\Kernel\Framework\Model\Model;
@@ -23,9 +24,10 @@ abstract class AbstractRepository
     protected SqlFn $sqlFn;
     protected LoggerInterface $logger;
 
-    private string $entityNamespace;
 
     private string $entityClassname;
+
+    private string $entityTable;
 
     /**
      * Constructeur.
@@ -60,10 +62,9 @@ abstract class AbstractRepository
     {
         try {
             $query = $this->customQuery()
-                ->select($this->getTableName())
+                ->select($this->entityClassname)
                 ->where('id', '=', $id)
                 ->execute()[0] ?? [];
-
             return $this->hydrate($query) ?? null;
         } catch (PDOException $e) {
             Logger::error("Error finding entity with ID: {$id}", ['exception' => $e]);
@@ -82,7 +83,7 @@ abstract class AbstractRepository
     {
         try {
             $query = $this->customQuery()
-                ->select($this->getTableName())
+                ->select($this->entityClassname)
                 ->where($field, '=', $value)
                 ->execute()[0] ?? [];
 
@@ -104,7 +105,7 @@ abstract class AbstractRepository
     {
         try {
             $result = $this->customQuery()
-                ->select($this->getTableName())
+                ->select($this->entityClassname)
                 ->where($field, '=', $value)
                 ->execute();
 
@@ -125,10 +126,14 @@ abstract class AbstractRepository
     private function init(): void
     {
         $entityClassname = explode('\\', get_called_class());
-        $entityClassname = end($entityClassname);
-        $entityClassname = str_replace('Repository', '', $entityClassname);
-        $this->entityNamespace = str_replace('Repository', '', get_called_class());
-        $this->entityClassname = $entityClassname;
+        $this->entityClassname = str_replace('Repository', '', end($entityClassname));
+        $this->entityClassname = "Sthom\\Back\\App\\Entity\\" . $this->entityClassname;
+        try {
+            $table = new \ReflectionClass($this->entityClassname);
+            $this->entityTable = $table->getAttributes(Entity::class)[0]->getArguments()['table'] ?? '';
+        } catch (\Exception $e) {
+            Logger::error($e->getMessage());
+        }
     }
 
     /**
@@ -140,25 +145,12 @@ abstract class AbstractRepository
     private function hydrate(array $data): ?object
     {
         try {
-            $entityClassname = $this->getEntityNamespace();
-            if (!class_exists($entityClassname)) {
-                throw new InvalidArgumentException("Class {$entityClassname} does not exist");
+            if (!class_exists($this->entityClassname)) {
+                throw new InvalidArgumentException("Class {$this->entityClassname} does not exist");
             }
-
-            $entity = new $entityClassname();
-
-            foreach ($data as $key => $value) {
-                $method = 'set' . ucfirst($key);
-                if (method_exists($entity, $method)) {
-                    $entity->$method($value);
-                } elseif (property_exists($entity, $key)) {
-                    $entity->$key = $value;
-                }
-            }
-
-            return $entity;
+            return new $this->entityClassname($data);
         } catch (\Exception $e) {
-            Logger::error("Error hydrating entity", ['exception' => $e, 'data' => $data]);
+            Logger::error("Error hydrating entity");
             return null;
         }
     }
@@ -172,10 +164,13 @@ abstract class AbstractRepository
     {
         try {
             $result = $this->customQuery()
-                ->select($this->getTableName())
+                ->select($this->entityTable)
                 ->execute();
 
-            return array_map([$this, 'hydrate'], $result);
+            foreach ($result as $key => $value) {
+                $result[$key] = $this->hydrate($value);
+            }
+            return $result;
         } catch (PDOException $e) {
             Logger::error("Error finding all entities", ['exception' => $e]);
             return [];
@@ -194,11 +189,11 @@ abstract class AbstractRepository
             $data = $data->toArray();
             if (isset($data['id'])) {
                 $this->customQuery()
-                    ->update($this->getTableName(), $data, $data['id']);
+                    ->update($this->entityClassname, $data, $data['id']);
                 return $data['id'];
             } else {
                 return $this->customQuery()
-                    ->insert($this->getTableName(), $data);
+                    ->insert($this->entityClassname, $data);
             }
         } catch (QueryExecutionException $e) {
             Logger::error("Error saving entity", ['exception' => $e, 'data' => $data]);
@@ -216,17 +211,10 @@ abstract class AbstractRepository
     {
         try {
             return $this->customQuery()
-                    ->delete($this->getTableName(), $id) > 0;
+                    ->delete($this->entityClassname, $id) > 0;
         } catch (QueryExecutionException $e) {
             Logger::error("Error deleting entity with ID: {$id}", ['exception' => $e]);
             return false;
         }
     }
-
-    /**
-     * Retourne le nom de la table associée au repository.
-     *
-     * @return string Le nom de la table.
-     */
-    abstract protected function getTableName(): string;
 }

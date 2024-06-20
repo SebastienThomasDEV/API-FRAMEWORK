@@ -2,28 +2,38 @@
 
 namespace Sthom\Back\App\Entity;
 
-use Sthom\Back\Kernel\Framework\Annotations\Mapper\Column;
-use Sthom\Back\Kernel\Framework\Annotations\Mapper\Entity;
+use Sthom\Back\App\Repository\ResellerRepository;
+use Sthom\Back\Kernel\Framework\Annotations\Orm\Entity;
 use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 
 
-#[Entity(table: 'reseller')]
+
+#[Entity(table: 'reseller', repository: ResellerRepository::class)]
 class Reseller implements EntityInterface
 {
-    #[Column(name: 'id', type: 'int')]
+
     private ?int $id = null;
 
-    #[Column(name: 'company', type: 'string')]
+
     private ?string $company;
 
-    #[Column(name: 'email', type: 'string')]
+
     private ?string $email;
 
-    #[Column(name: 'phone', type: 'string')]
+
     private ?string $phone;
 
-    #[Column(name: 'website', type: 'string')]
+
     private ?string $website;
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->company = $data['company'] ?? null;
+        $this->email = $data['email'] ?? null;
+        $this->phone = $data['phone'] ?? null;
+        $this->website = $data['website'] ?? null;
+    }
 
     public function getId(): ?int
     {

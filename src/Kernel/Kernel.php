@@ -91,6 +91,7 @@ class Kernel
         }
     }
 
+
     private function configureRoute(Route $route): void
     {
         $requestType = $route->getRequestType();

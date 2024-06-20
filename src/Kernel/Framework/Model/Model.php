@@ -2,9 +2,9 @@
 
 namespace Sthom\Back\Kernel\Framework\Model;
 
-use Sthom\Back\Kernel\Framework\Utils\SingletonTrait;
 use PDO;
 use PDOException;
+use Sthom\Back\Kernel\Framework\Utils\SingletonTrait;
 
 /**
  * Classe Model

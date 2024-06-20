@@ -2,29 +2,40 @@
 
 namespace Sthom\Back\App\Entity;
 
-use Sthom\Back\Kernel\Framework\Annotations\Mapper\Column;
-use Sthom\Back\Kernel\Framework\Annotations\Mapper\Entity;
+use Sthom\Back\App\Repository\TechnicalSheetRepository;
+use Sthom\Back\Kernel\Framework\Annotations\Orm\Entity;
 use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 
 
-#[Entity(table: 'technical_sheet')]
+
+#[Entity(table: 'technical_sheet', repository: TechnicalSheetRepository::class)]
 class TechnicalSheet implements EntityInterface
 {
 
-    #[Column(name: 'id', type: 'int')]
+
     private ?int $id = null;
 
-    #[Column(name: 'name', type: 'string')]
+
     private ?string $name;
 
-    #[Column(name: 'description', type: 'string')]
+
     private ?string $description;
 
-    #[Column(name: 'weight', type: 'float')]
+
     private ?float $weight;
 
-    #[Column(name: 'image', type: 'string')]
+
     private ?string $image;
+
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->name = $data['name'] ?? null;
+        $this->description = $data['description'] ?? null;
+        $this->weight = $data['weight'] ?? null;
+        $this->image = $data['image'] ?? null;
+    }
 
     public function getId(): ?int
     {
