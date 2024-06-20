@@ -1,13 +1,22 @@
 <?php
 
-namespace Sthom\Back\Entity;
+namespace Sthom\Back\App\Entity;
 
-use Sthom\Back\Kernel\Framework\Utils\EntityInterface;
+use Sthom\Back\Kernel\Framework\Annotations\Mapper\Column;
+use Sthom\Back\Kernel\Framework\Annotations\Mapper\Entity;
+use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 
+#[Entity(table: 'reseller')]
 class Review implements EntityInterface
 {
+
+    #[Column(name: 'id', type: 'int')]
     private ?int $id = null;
+
+    #[Column(name: 'comment', type: 'string')]
     private ?string $comment;
+
+    #[Column(name: 'rating', type: 'int')]
     private ?int $rating;
 
     public function getId(): ?int

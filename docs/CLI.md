@@ -31,9 +31,6 @@ Le contrôleur généré aura la structure suivante :
 
 namespace Sthom\Back\Controller;
 
-use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-
 class {controller} extends AbstractController
 {
     #[Route(path: '/', requestType: 'GET', guarded: false)]

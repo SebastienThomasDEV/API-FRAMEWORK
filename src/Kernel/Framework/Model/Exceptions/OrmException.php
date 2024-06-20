@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sthom\Back\Kernel\Framework\Model\Exceptions;
 
 class OrmException extends \Exception

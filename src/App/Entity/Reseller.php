@@ -1,15 +1,28 @@
 <?php
 
-namespace Sthom\Back\Entity;
+namespace Sthom\Back\App\Entity;
 
-use Sthom\Back\Kernel\Framework\Utils\EntityInterface;
+use Sthom\Back\Kernel\Framework\Annotations\Mapper\Column;
+use Sthom\Back\Kernel\Framework\Annotations\Mapper\Entity;
+use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 
+
+#[Entity(table: 'reseller')]
 class Reseller implements EntityInterface
 {
+    #[Column(name: 'id', type: 'int')]
     private ?int $id = null;
+
+    #[Column(name: 'company', type: 'string')]
     private ?string $company;
+
+    #[Column(name: 'email', type: 'string')]
     private ?string $email;
+
+    #[Column(name: 'phone', type: 'string')]
     private ?string $phone;
+
+    #[Column(name: 'website', type: 'string')]
     private ?string $website;
 
     public function getId(): ?int

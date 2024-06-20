@@ -1,6 +1,6 @@
 <?php
 
-namespace Sthom\Back\Kernel\Framework\Annotations;
+namespace Sthom\Back\Kernel\Framework\Annotations\Routing;
 
 use Sthom\Back\Kernel\Framework\AbstractController;
 

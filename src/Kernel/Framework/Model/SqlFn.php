@@ -2,8 +2,10 @@
 
 namespace Sthom\Back\Kernel\Framework\Model;
 
-use Sthom\Back\Kernel\Framework\Model\Exceptions\OrmException;
+use Sthom\Back\Kernel\Framework\Model\Exceptions\InvalidOperatorException;
+use Sthom\Back\Kernel\Framework\Model\Exceptions\QueryExecutionException;
 use Sthom\Back\Kernel\Framework\Model\Interfaces\SqlFnInterface;
+use Sthom\Back\Kernel\Framework\Utils\Logger;
 
 class SqlFn implements SqlFnInterface
 {
@@ -18,12 +20,10 @@ class SqlFn implements SqlFnInterface
         $this->connection = $connection;
     }
 
-
-
     private function validateOperator(string $operator): void
     {
         if (!in_array($operator, self::OPERATORS)) {
-            throw new \InvalidArgumentException("Invalid operator: $operator");
+            throw new InvalidOperatorException("Invalid operator: $operator. Allowed operators are: " . implode(', ', self::OPERATORS));
         }
     }
 
@@ -33,192 +33,265 @@ class SqlFn implements SqlFnInterface
         $this->bindParams = [];
     }
 
-    public final function select(string $table, array $fields = ['*']): SqlFnInterface
+    private function generatePlaceholder(string $field): string
+    {
+        return str_replace('.', '_', $field) . uniqid('_', true);
+    }
+
+    private function addCondition(string $type, string $field, string $operator, $value): SqlFnInterface
+    {
+        $this->validateOperator($operator);
+        $placeholder = $this->generatePlaceholder($field);
+        $this->statement .= " $type $field $operator :$placeholder";
+        $this->bindParams[$placeholder] = $value;
+        return $this;
+    }
+
+    public function select(string $table, array $fields = ['*']): SqlFnInterface
     {
         $this->statement = "SELECT " . implode(', ', $fields) . " FROM $table";
         return $this;
     }
 
-    public final function where(string $field, string $operator, $value): SqlFnInterface
+    public function where(string $field, string $operator, $value): SqlFnInterface
     {
-        $this->validateOperator($operator);
-        $this->statement .= " WHERE $field $operator :$field";
-        $this->bindParams[$field] = $value;
+        return $this->addCondition('WHERE', $field, $operator, $value);
+    }
+
+    public function andWhere(string $field, string $operator, $value): SqlFnInterface
+    {
+        return $this->addCondition('AND', $field, $operator, $value);
+    }
+
+    public function orWhere(string $field, string $operator, $value): SqlFnInterface
+    {
+        return $this->addCondition('OR', $field, $operator, $value);
+    }
+
+    public function whereIn(string $field, array $values): SqlFnInterface
+    {
+        $placeholders = array_map(fn($index) => ":{$field}_{$index}", array_keys($values));
+        $this->statement .= " WHERE $field IN (" . implode(', ', $placeholders) . ")";
+        foreach ($values as $index => $value) {
+            $this->bindParams["{$field}_{$index}"] = $value;
+        }
         return $this;
     }
 
-    public final function andWhere(string $field, string $operator, $value): SqlFnInterface
+    public function andWhereIn(string $field, array $values): SqlFnInterface
     {
-        $this->validateOperator($operator);
-        $this->statement .= " AND $field $operator :$field";
-        $this->bindParams[$field] = $value;
+        $placeholders = array_map(fn($index) => ":{$field}_{$index}", array_keys($values));
+        $this->statement .= " AND $field IN (" . implode(', ', $placeholders) . ")";
+        foreach ($values as $index => $value) {
+            $this->bindParams["{$field}_{$index}"] = $value;
+        }
         return $this;
     }
 
-    public final function orWhere(string $field, string $operator, $value): SqlFnInterface
+    public function orWhereIn(string $field, array $values): SqlFnInterface
     {
-        $this->validateOperator($operator);
-        $this->statement .= " OR $field $operator :$field";
-        $this->bindParams[$field] = $value;
+        $placeholders = array_map(fn($index) => ":{$field}_{$index}", array_keys($values));
+        $this->statement .= " OR $field IN (" . implode(', ', $placeholders) . ")";
+        foreach ($values as $index => $value) {
+            $this->bindParams["{$field}_{$index}"] = $value;
+        }
         return $this;
     }
 
-    public final function orderBy(string $field, string $direction = 'ASC'): SqlFnInterface
+    public function orderBy(string $field, string $direction = 'ASC'): SqlFnInterface
     {
         $this->statement .= " ORDER BY $field $direction";
         return $this;
     }
 
-    public final function limit(int $limit): SqlFnInterface
+    public function limit(int $limit): SqlFnInterface
     {
         $this->statement .= " LIMIT $limit";
         return $this;
     }
 
-    public final function offset(int $offset): SqlFnInterface
+    public function offset(int $offset): SqlFnInterface
     {
         $this->statement .= " OFFSET $offset";
         return $this;
     }
 
-    public final function execute(): array
-    {
-        try {
-            $stmt = $this->connection->prepare($this->statement);
-            $stmt->execute($this->bindParams);
-            return $stmt->fetchAll(\PDO::FETCH_ASSOC) ?: [];
-        } catch (\PDOException $e) {
-            throw new OrmException('Error executing query', 0, $e);
-        } finally {
-            $this->reset();
-        }
-    }
-
-    public final function insert(string $table, array $data): int
-    {
-        $fields = array_keys($data);
-        $placeholders = array_map(fn($field) => ":$field", $fields);
-        $this->statement = "INSERT INTO $table (" . implode(', ', $fields) . ") VALUES (" . implode(', ', $placeholders) . ")";
-        $this->bindParams = $data;
-
-        $stmt = $this->connection->prepare($this->statement);
-        $stmt->execute($this->bindParams);
-        return $this->connection->lastInsertId();
-    }
-
-    public final function update(string $table, array $data, int $id): int
-    {
-        $fields = array_keys($data);
-        $setClause = implode(', ', array_map(fn($field) => "$field = :$field", $fields));
-        $this->statement = "UPDATE $table SET $setClause WHERE id = :id";
-        $data['id'] = $id;
-        $this->bindParams = $data;
-
-        $stmt = $this->connection->prepare($this->statement);
-        $stmt->execute($this->bindParams);
-        return $stmt->rowCount();
-    }
-
-    public final function delete(string $table, int $id): int
-    {
-        $this->statement = "DELETE FROM $table WHERE id = :id";
-        $this->bindParams = ['id' => $id];
-
-        $stmt = $this->connection->prepare($this->statement);
-        $stmt->execute($this->bindParams);
-        return $stmt->rowCount();
-    }
-
-    public final function count(): int
-    {
-        $stmt = $this->connection->prepare($this->statement);
-        $stmt->execute($this->bindParams);
-        return $stmt->rowCount();
-    }
-
-    private function addJoin(string $type, string $table, string $field1, string $operator, string $field2): SqlFnInterface
-    {
-        $this->validateOperator($operator);
-        $this->statement .= " $type JOIN $table ON $field1 $operator $field2";
-        return $this;
-    }
-
-    public final function join(string $table, string $field1, string $operator, string $field2): SqlFnInterface
-    {
-        return $this->addJoin('INNER', $table, $field1, $operator, $field2);
-    }
-
-    public final function leftJoin(string $table, string $field1, string $operator, string $field2): SqlFnInterface
-    {
-        return $this->addJoin('LEFT', $table, $field1, $operator, $field2);
-    }
-
-    public final function rightJoin(string $table, string $field1, string $operator, string $field2): SqlFnInterface
-    {
-        return $this->addJoin('RIGHT', $table, $field1, $operator, $field2);
-    }
-
-    public final function innerJoin(string $table, string $field1, string $operator, string $field2): SqlFnInterface
-    {
-        return $this->addJoin('INNER', $table, $field1, $operator, $field2);
-    }
-
-    public final function groupBy(string $field): SqlFnInterface
+    public function groupBy(string $field): SqlFnInterface
     {
         $this->statement .= " GROUP BY $field";
         return $this;
     }
 
-    public final function having(string $field, string $operator, $value): SqlFnInterface
+    public function having(string $field, string $operator, $value): SqlFnInterface
     {
         $this->validateOperator($operator);
-        $this->statement .= " HAVING $field $operator :$field";
-        $this->bindParams[$field] = $value;
+        $placeholder = $this->generatePlaceholder($field);
+        $this->statement .= " HAVING $field $operator :$placeholder";
+        $this->bindParams[$placeholder] = $value;
         return $this;
     }
 
-    public final function set(string $field, $value): SqlFnInterface
+    public function execute(): array
     {
-        $this->statement .= " SET $field = :$field";
-        $this->bindParams[$field] = $value;
-        return $this;
+        try {
+            $this->logQuery($this->statement, $this->bindParams);
+            $stmt = $this->connection->prepare($this->statement);
+            $stmt->execute($this->bindParams);
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC) ?: [];
+        } catch (\QueryExecutionException $e) {
+            $this->logError($e);
+        } finally {
+            $this->reset();
+        }
+        return [];
     }
 
-    public final function sum(string $field): SqlFnInterface
+    /**
+     * @throws QueryExecutionException
+     */
+    public function insert(string $table, array $data): int
     {
-        $this->statement .= " SUM($field)";
-        return $this;
+        try {
+            $fields = array_keys($data);
+            $placeholders = array_map(fn($field) => ":$field", $fields);
+            $this->statement = "INSERT INTO $table (" . implode(', ', $fields) . ") VALUES (" . implode(', ', $placeholders) . ")";
+            $this->bindParams = $data;
+
+            $this->logQuery($this->statement, $this->bindParams);
+            $stmt = $this->connection->prepare($this->statement);
+            $stmt->execute($this->bindParams);
+            return $this->connection->lastInsertId();
+        } catch (\PDOException $e) {
+            $this->logError($e);
+            throw new QueryExecutionException('Error executing insert query', 0, $e);
+        } finally {
+            $this->reset();
+        }
     }
 
-    public final function avg(string $field): SqlFnInterface
+    public function update(string $table, array $data, int $id): int
     {
-        $this->statement .= " AVG($field)";
-        return $this;
+        try {
+            $fields = array_keys($data);
+            $setClause = implode(', ', array_map(fn($field) => "$field = :$field", $fields));
+            $this->statement = "UPDATE $table SET $setClause WHERE id = :id";
+            $data['id'] = $id;
+            $this->bindParams = $data;
+
+            $this->logQuery($this->statement, $this->bindParams);
+            $stmt = $this->connection->prepare($this->statement);
+            $stmt->execute($this->bindParams);
+            return $stmt->rowCount();
+        } catch (\PDOException $e) {
+            $this->logError($e);
+            throw new QueryExecutionException('Error executing update query', 0, $e);
+        } finally {
+            $this->reset();
+        }
     }
 
-    public final function min(string $field): SqlFnInterface
+    public function delete(string $table, int $id): int
     {
-        $this->statement .= " MIN($field)";
-        return $this;
+        try {
+            $this->statement = "DELETE FROM $table WHERE id = :id";
+            $this->bindParams = ['id' => $id];
+
+            $this->logQuery($this->statement, $this->bindParams);
+            $stmt = $this->connection->prepare($this->statement);
+            $stmt->execute($this->bindParams);
+            return $stmt->rowCount();
+        } catch (\PDOException $e) {
+            $this->logError($e);
+            throw new QueryExecutionException('Error executing delete query', 0, $e);
+        } finally {
+            $this->reset();
+        }
     }
 
-    public final function max(string $field): SqlFnInterface
+    public function count(string $field = '*'): int
     {
-        $this->statement .= " MAX($field)";
-        return $this;
+        $this->statement = "SELECT COUNT($field) AS count FROM ($this->statement) AS subquery";
+        $result = $this->execute();
+        return $result[0]['count'] ?? 0;
     }
 
-    public final function distinct(string $field): SqlFnInterface
+    public function sum(string $field): float
+    {
+        $this->statement = "SELECT SUM($field) AS sum FROM ($this->statement) AS subquery";
+        $result = $this->execute();
+        return $result[0]['sum'] ?? 0;
+    }
+
+    public function avg(string $field): float
+    {
+        $this->statement = "SELECT AVG($field) AS avg FROM ($this->statement) AS subquery";
+        $result = $this->execute();
+        return $result[0]['avg'] ?? 0;
+    }
+
+    public function min(string $field): float
+    {
+        $this->statement = "SELECT MIN($field) AS min FROM ($this->statement) AS subquery";
+        $result = $this->execute();
+        return $result[0]['min'] ?? 0;
+    }
+
+    public function max(string $field): float
+    {
+        $this->statement = "SELECT MAX($field) AS max FROM ($this->statement) AS subquery";
+        $result = $this->execute();
+        return $result[0]['max'] ?? 0;
+    }
+
+    public function distinct(string $field): SqlFnInterface
     {
         $this->statement .= " DISTINCT $field";
         return $this;
     }
 
-    public final function raw(string $query): SqlFnInterface
+    public function raw(string $query): SqlFnInterface
     {
         $this->statement = $query;
         return $this;
     }
 
+    public function executeTransaction(callable $callback): void
+    {
+        try {
+            $this->connection->beginTransaction();
+            $callback($this);
+            $this->connection->commit();
+        } catch (\PDOException $e) {
+            $this->connection->rollBack();
+            throw new QueryExecutionException('Transaction failed', 0, $e);
+        }
+    }
 
+    private function logError(\Exception $e): void
+    {
+        // Assuming a Logger instance is available
+        Logger::error($e->getMessage(), ['exception' => $e]);
+    }
+
+    private function logQuery(string $query, array $params): void
+    {
+        // Assuming a Logger instance is available
+        Logger::info("Executing query: $query", ['params' => $params]);
+    }
+
+
+    public function beginTransaction(): void
+    {
+        $this->connection->beginTransaction();
+    }
+
+    public function commit(): void
+    {
+        $this->connection->commit();
+    }
+
+    public function rollBack(): void
+    {
+        $this->connection->rollBack();
+    }
 }

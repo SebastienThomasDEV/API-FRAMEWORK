@@ -1,18 +1,37 @@
 <?php
 
-namespace Sthom\Back\Entity;
+namespace Sthom\Back\App\Entity;
 
-use Sthom\Back\Kernel\Framework\Utils\EntityInterface;
-use Sthom\Back\Kernel\Framework\Utils\UserInterface;
+use Sthom\Back\Kernel\Framework\Annotations\Mapper\Column;
+use Sthom\Back\Kernel\Framework\Annotations\Mapper\Entity;
+use Sthom\Back\Kernel\Framework\Annotations\Mapper\Relations\OneToMany;
+use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
+use Sthom\Back\Kernel\Framework\Model\Interfaces\UserInterface;
 
+
+#[Entity(table: 'user')]
 class User implements UserInterface, EntityInterface
 {
+    #[Column(name: 'id', type: 'int')]
     private ?int $id = null;
+
+    #[Column(name: 'roles', type: 'string')]
     private ?string $roles;
+
+    #[Column(name: 'email', type: 'string')]
     private ?string $email;
+
+    #[Column(name: 'surname', type: 'string')]
     private ?string $surname;
+
+    #[Column(name: 'name', type: 'string')]
     private ?string $name;
+
+    #[Column(name: 'pwd', type: 'string')]
     private ?string $pwd;
+
+    #[OneToMany(columnName: 'addresses', targetEntity: Address::class)]
+    private array $addresses = [];
 
     public function getId(): ?int
     {

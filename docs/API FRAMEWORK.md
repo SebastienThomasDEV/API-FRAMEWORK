@@ -367,7 +367,7 @@ your-project/
    use Sthom\Back\Kernel\Framework\Middlewares\JwtMiddleware;
    use Sthom\Back\Kernel\Framework\Model\Model;
    use Sthom\Back\Kernel\Framework\Services\Request;
-   use Sthom\Back\Kernel\Framework\Utils\ClassReader;
+   use Sthom\Back\Kernel\Framework\Utils\ControllerReader;
    use Sthom\Back\Kernel\Framework\Utils\SingletonTrait;
    use Throwable;
 
@@ -389,7 +389,7 @@ your-project/
                $app->options('/{routes:.+}', function (ServerRequest $serverRequest, ServerResponse $response) {
                    return $response;
                });
-               $routes = ClassReader::readRoutes();
+               $routes = ControllerReader::readRoutes();
                $app->add(new JwtMiddleware($routes));
                foreach ($routes as $route) {
                    $requestType = $route->getRequestType();
@@ -504,8 +504,7 @@ Exemple :
 
 namespace Sthom\Back\Controller;
 
-use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
+use Sthom\Back\Kernel\Framework\AbstractController;use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;
 
 class ExampleController extends AbstractController
 {
@@ -534,9 +533,7 @@ Exemple de Contrôleur :
 
 namespace Sthom\Back\Controller;
 
-use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-use Sthom\Back\Kernel\Framework\Services\Request;
+use Sthom\Back\Kernel\Framework\AbstractController;use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;use Sthom\Back\Kernel\Framework\Services\Request;
 
 class ExampleController extends AbstractController
 {
@@ -566,12 +563,7 @@ Voici un exemple de middleware pour gérer les JWT :
 
 namespace Sthom\Back\Kernel\Framework\Middlewares;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Server\MiddlewareInterface;
-use Psr\Http\Server\RequestHandlerInterface;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-use Sthom\Back\Kernel\Framework\Services\JwtManager;
+use Psr\Http\Message\ResponseInterface;use Psr\Http\Message\ServerRequestInterface;use Psr\Http\Server\MiddlewareInterface;use Psr\Http\Server\RequestHandlerInterface;use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;use Sthom\Back\Kernel\Framework\Services\JwtManager;
 
 class JwtMiddleware implements MiddlewareInterface
 {
@@ -639,9 +631,7 @@ Voici un exemple de route définie dans un contrôleur :
 
 namespace Sthom\Back\Controller;
 
-use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-use Sthom\Back\Kernel\Framework\Services\Request;
+use Sthom\Back\Kernel\Framework\AbstractController;use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;
 
 class ExampleController extends AbstractController
 {
@@ -708,6 +698,7 @@ public function getUser(Request $request): array
 La lecture des routes est effectuée par la classe `ClassReader`. Cette classe lit les annotations de route dans les contrôleurs et les enregistre pour Slim.
 
 ##### Exemple de Lecture des Routes
+
 ```php
 <?php
 
@@ -728,7 +719,7 @@ abstract class ClassReader
                     foreach ($controller->getMethods() as $method) {
                         $attributes = $method->getAttributes();
                         foreach ($attributes as $attribute) {
-                            if ($attribute->getName() === 'Sthom\Back\Kernel\Framework\Annotations\Route') {
+                            if ($attribute->getName() === 'Sthom\Back\Kernel\Framework\Annotations\Routing\Route') {
                                 $route = $attribute->newInstance();
                                 $route->setController($controller->newInstance());
                                 $route->setFn($method->getName());
@@ -749,6 +740,7 @@ abstract class ClassReader
 Une fois les routes lues et enregistrées, elles sont ajoutées à l'application Slim.
 
 ##### Exemple d'Ajout de Routes dans le Kernel
+
 ```php
 <?php
 
@@ -762,7 +754,7 @@ use Slim\Factory\AppFactory;
 use Sthom\Back\Kernel\Framework\Middlewares\JwtMiddleware;
 use Sthom\Back\Kernel\Framework\Model\Model;
 use Sthom\Back\Kernel\Framework\Services\Request;
-use Sthom\Back\Kernel\Framework\Utils\ClassReader;
+use Sthom\Back\Kernel\Framework\Utils\ControllerReader;
 use Sthom\Back\Kernel\Framework\Utils\SingletonTrait;
 use Throwable;
 
@@ -795,7 +787,7 @@ class Kernel
             });
 
             // Lecture des routes
-            $routes = ClassReader::readRoutes();
+            $routes = ControllerReader::readRoutes();
             foreach ($routes as $route) {
                 $requestType = $route->getRequestType();
                 $path = $route->getPath();
@@ -878,10 +870,7 @@ Voici un exemple de création d'un contrôleur avec des routes définies :
 
 namespace Sthom\Back\Controller;
 
-use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-use Sthom\Back\Kernel\Framework\Services\Request;
-use Sthom\Back\Repository\UserRepository;
+use Sthom\Back\App\Repository\UserRepository;use Sthom\Back\Kernel\Framework\AbstractController;use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;use Sthom\Back\Kernel\Framework\Services\Request;
 
 class ExampleController extends AbstractController
 {
@@ -988,17 +977,13 @@ public function handleError(ServerResponse $response, Throwable $exception): Ser
 ```
 
 #### Exemple Complet de Contrôleur
+
 ```php
 <?php
 
 namespace Sthom\Back\Controller;
 
-use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-use Sthom\Back\Kernel\Framework\Services\Request;
-use Sthom\Back\Repository\UserRepository;
-use Sthom\Back\Entity\User;
-use Sthom\Back\Kernel\Framework\Services\PasswordHasher;
+use Sthom\Back\App\Entity\User;use Sthom\Back\App\Repository\UserRepository;use Sthom\Back\Kernel\Framework\AbstractController;use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;use Sthom\Back\Kernel\Framework\Services\PasswordHasher;use Sthom\Back\Kernel\Framework\Services\Request;
 
 class ExampleController extends AbstractController
 {
@@ -1057,12 +1042,7 @@ Ce middleware vérifie la présence et la validité d'un token JWT dans les requ
 
 namespace Sthom\Back\Kernel\Framework\Middlewares;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Server\MiddlewareInterface;
-use Psr\Http\Server\RequestHandlerInterface;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-use Sthom\Back\Kernel\Framework\Services\JwtManager;
+use Psr\Http\Message\ResponseInterface;use Psr\Http\Message\ServerRequestInterface;use Psr\Http\Server\MiddlewareInterface;use Psr\Http\Server\RequestHandlerInterface;use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;use Sthom\Back\Kernel\Framework\Services\JwtManager;
 
 class JwtMiddleware implements MiddlewareInterface
 {
@@ -1129,6 +1109,7 @@ class JwtMiddleware implements MiddlewareInterface
 Pour ajouter des middlewares à votre application, utilisez la méthode `add` de Slim.
 
 ##### Exemple d'Ajout de Middleware
+
 ```php
 <?php
 
@@ -1136,7 +1117,7 @@ namespace Sthom\Back\Kernel;
 
 use Slim\Factory\AppFactory;
 use Sthom\Back\Kernel\Framework\Middlewares\JwtMiddleware;
-use Sthom\Back\Kernel\Framework\Utils\ClassReader;
+use Sthom\Back\Kernel\Framework\Utils\ControllerReader;
 
 class Kernel
 {
@@ -1151,7 +1132,7 @@ class Kernel
             $app = AppFactory::create();
             $app->addErrorMiddleware(true, true, true);
 
-            $routes = ClassReader::readRoutes();
+            $routes = ControllerReader::readRoutes();
             $app->add(new JwtMiddleware($routes));
 
             foreach ($routes as $route) {
@@ -1390,13 +1371,13 @@ class User
 ```
 
 ##### Exemple de Méthodes dans le Repository
+
 ```php
 <?php
 
 namespace Sthom\Back\Repository;
 
-use Sthom\Back\Kernel\Framework\AbstractRepository;
-use Sthom\Back\Entity\User;
+use Sthom\Back\App\Entity\User;use Sthom\Back\Kernel\Framework\AbstractRepository;
 
 class UserRepository extends AbstractRepository
 {
@@ -1528,16 +1509,13 @@ class PasswordHasher implements ServiceInterface
 Les services peuvent être injectés dans les contrôleurs via les méthodes des contrôleurs annotées avec `#[Route]`.
 
 ##### Exemple d'Injection de Service
+
 ```php
 <?php
 
 namespace Sthom\Back\Controller;
 
-use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-use Sthom\Back\Kernel\Framework\Services\Request;
-use Sthom\Back\Kernel\Framework\Services\PasswordHasher;
-use Sthom\Back\Repository\UserRepository;
+use Sthom\Back\App\Repository\UserRepository;use Sthom\Back\Kernel\Framework\AbstractController;use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;use Sthom\Back\Kernel\Framework\Services\PasswordHasher;use Sthom\Back\Kernel\Framework\Services\Request;
 
 class ExampleController extends AbstractController
 {
@@ -1757,18 +1735,13 @@ class JwtManager implements ServiceInterface
 Les middlewares de sécurité vérifient la présence et la validité des JWT dans les requêtes entrantes.
 
 ##### Exemple de Middleware JWT
+
 ```php
 <?php
 
 namespace Sthom\Back\Kernel\Framework\Middlewares;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Server\MiddlewareInterface;
-use Psr\Http\Server\RequestHandlerInterface;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
-use Sthom\Back\Kernel\Framework\Model\Model;
-use Sthom\Back\Kernel\Framework\Services\JwtManager;
+use Psr\Http\Message\ResponseInterface;use Psr\Http\Message\ServerRequestInterface;use Psr\Http\Server\MiddlewareInterface;use Psr\Http\Server\RequestHandlerInterface;use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;use Sthom\Back\Kernel\Framework\Model\Model;use Sthom\Back\Kernel\Framework\Services\JwtManager;
 
 class JwtMiddleware implements MiddlewareInterface
 {
@@ -1909,6 +1882,7 @@ class PasswordHasherTest extends TestCase
 Les tests fonctionnels permettent de vérifier le bon fonctionnement des interactions entre plusieurs unités de votre code, comme les contrôleurs et les routes.
 
 ##### Test du Contrôleur ExampleController
+
 ```php
 <?php
 
@@ -1917,7 +1891,7 @@ namespace Tests\Controller;
 use PHPUnit\Framework\TestCase;
 use Slim\Factory\AppFactory;
 use Sthom\Back\Kernel\Framework\Middlewares\JwtMiddleware;
-use Sthom\Back\Kernel\Framework\Utils\ClassReader;
+use Sthom\Back\Kernel\Framework\Utils\ControllerReader;
 
 class ExampleControllerTest extends TestCase
 {
@@ -1926,7 +1900,7 @@ class ExampleControllerTest extends TestCase
     protected function setUp(): void
     {
         $this->app = AppFactory::create();
-        $routes = ClassReader::readRoutes();
+        $routes = ControllerReader::readRoutes();
         $this->app->add(new JwtMiddleware($routes));
 
         foreach ($routes as $route) {

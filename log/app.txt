@@ -1,0 +1,328 @@
+2024-06-10 07:48:44 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 07:55:37 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 08:07:49 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 08:13:08 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 08:19:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 08:19:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:45:18 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:45:52 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:46:07 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:46:16 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:46:48 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:47:04 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:47:06 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:47:38 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:47:56 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:48:05 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:48:06 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:48:22 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:49:05 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:49:45 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:49:59 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:50:33 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 13:59:18 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:01:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:01:31 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), );
+2024-06-10 14:02:00 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:03:06 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:03:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:03:31 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:03:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:03:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:03:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:03:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:07:14 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:07:14 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:07:14 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:07:14 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:07:15 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:07:15 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:07:15 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:07:15 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:33:42 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:33:42 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:34:35 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-10 14:38:18 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:38:18 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:38:18 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-10 14:38:18 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:38:18 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:38:18 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:38:18 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:38:18 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:38:18 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:38:19 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:38:19 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:38:19 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:38:19 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:38:19 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:38:19 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:38:19 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:38:19 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:38:19 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), addresses_id INT,FOREIGN KEY (addresses_id) REFERENCES address(id));
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-10 14:44:52 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:46:00 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:46:27 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:48:08 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:49:00 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:50:40 : ERROR : Too few arguments to function Sthom\Back\Kernel\Framework\AbstractRepository::__construct(), 0 passed in C:\Apache24\htdocs\back\src\Kernel\Framework\Utils\ControllerReader.php on line 169 and exactly 2 expected
+2024-06-10 14:55:08 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:08:43 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:11:54 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:13:57 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:14:47 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-10 15:14:47 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id' cannot be null
+2024-06-10 15:14:47 : ERROR : Class "Sthom\Back\Kernel\Framework\Model\Exceptions\QueryExecutionException" not found
+2024-06-10 15:20:22 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-10 15:20:22 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id' cannot be null
+2024-06-10 15:20:22 : ERROR : Error saving entity
+2024-06-10 15:20:28 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:21:26 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:21:38 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:21:52 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-12 21:56:36 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 21:56:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 21:56:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-12 21:56:36 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 21:56:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 21:56:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 21:56:36 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 21:56:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 21:56:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 21:56:36 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 21:56:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 21:56:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 21:56:37 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 21:56:37 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 21:56:37 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 21:56:37 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 21:56:37 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 21:56:37 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-12 22:01:24 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:01:24 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-12 22:01:35 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:01:35 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 22:01:35 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-12 22:01:35 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:01:35 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 22:01:35 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 22:01:35 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:01:35 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:01:35 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 22:01:35 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:01:35 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:01:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 22:01:36 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:01:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 22:01:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 22:01:36 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:01:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 22:01:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-12 22:02:51 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:02:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 22:03:15 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:03:33 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:32:17 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:32:17 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-12 22:34:44 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:35:01 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:35:54 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:39:08 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:41:11 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:43:32 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:44:09 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:48:24 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:49:44 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:51:01 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:51:11 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:55:10 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:56:07 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 22:56:46 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:56:46 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:56:46 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 22:56:46 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:58:21 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:58:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:58:31 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:58:33 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:58:33 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:58:34 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:58:34 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-20 08:21:17 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-20 08:21:26 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-20 08:25:45 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-20 08:26:49 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-20 08:33:15 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 08:33:16 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.user' doesn't exist
+2024-06-20 08:33:16 : ERROR : Error saving entity
+2024-06-20 08:33:38 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-06-20 08:33:56 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-06-20 08:34:08 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-06-20 08:34:16 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-06-20 08:38:51 : INFO : Executing query: SELECT * FROM technical_sheet

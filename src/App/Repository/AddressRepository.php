@@ -1,6 +1,6 @@
 <?php
 
-namespace Sthom\Back\Repository;
+namespace Sthom\Back\App\Repository;
 
 use Sthom\Back\Kernel\Framework\AbstractRepository;
 

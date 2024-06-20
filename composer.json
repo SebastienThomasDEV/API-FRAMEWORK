@@ -3,9 +3,6 @@
     "autoload": {
         "psr-4": {
             "Sthom\\Back\\": "src/"
-        },
-        "psr-0": {
-            "Sthom\\Back\\": "src/"
         }
     },
     "authors": [

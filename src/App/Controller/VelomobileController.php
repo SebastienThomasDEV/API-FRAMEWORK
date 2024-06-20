@@ -1,12 +1,12 @@
 <?php
 
-namespace Sthom\Back\Controller;
+namespace Sthom\Back\App\Controller;
 
-use Sthom\Back\Entity\TechnicalSheet;
+use Sthom\Back\App\Entity\TechnicalSheet;
+use Sthom\Back\App\Repository\TechnicalSheetRepository;
 use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
+use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;
 use Sthom\Back\Kernel\Framework\Services\Request;
-use Sthom\Back\Repository\TechnicalSheetRepository;
 
 class VelomobileController extends AbstractController
 {

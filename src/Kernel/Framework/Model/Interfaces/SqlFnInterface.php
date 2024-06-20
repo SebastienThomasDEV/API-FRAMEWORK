@@ -5,225 +5,196 @@ namespace Sthom\Back\Kernel\Framework\Model\Interfaces;
 /**
  * Interface SqlFnInterface
  *
- * Fournit une interface pour construire et exécuter des requêtes SQL.
+ * This interface defines the methods for SQL function handling in the application.
  */
 interface SqlFnInterface
 {
     /**
-     * Sélectionne des champs dans une table.
+     * Selects fields from a table.
      *
-     * @param string $table Le nom de la table.
-     * @param array $fields Les champs à sélectionner (par défaut, tous les champs).
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $table The name of the table.
+     * @param array $fields The fields to select. Default is ['*'].
+     * @return SqlFnInterface
      */
     public function select(string $table, array $fields = ['*']): SqlFnInterface;
 
     /**
-     * Ajoute une condition WHERE à la requête.
+     * Adds a WHERE condition to the SQL query.
      *
-     * @param string $field Le champ à comparer.
-     * @param string $operator L'opérateur de comparaison (par exemple, '=', '>', '<').
-     * @param mixed $value La valeur à comparer.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field name.
+     * @param string $operator The operator (e.g., '=', '>', '<', etc.).
+     * @param mixed $value The value to compare.
+     * @return SqlFnInterface
      */
-    public function where(string $field, string $operator, mixed $value): SqlFnInterface;
+    public function where(string $field, string $operator, $value): SqlFnInterface;
 
     /**
-     * Ajoute une condition AND WHERE à la requête.
+     * Adds an AND WHERE condition to the SQL query.
      *
-     * @param string $field Le champ à comparer.
-     * @param string $operator L'opérateur de comparaison.
-     * @param mixed $value La valeur à comparer.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field name.
+     * @param string $operator The operator (e.g., '=', '>', '<', etc.).
+     * @param mixed $value The value to compare.
+     * @return SqlFnInterface
      */
-    public function andWhere(string $field, string $operator, mixed $value): SqlFnInterface;
+    public function andWhere(string $field, string $operator, $value): SqlFnInterface;
 
     /**
-     * Ajoute une condition OR WHERE à la requête.
+     * Adds an OR WHERE condition to the SQL query.
      *
-     * @param string $field Le champ à comparer.
-     * @param string $operator L'opérateur de comparaison.
-     * @param mixed $value La valeur à comparer.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field name.
+     * @param string $operator The operator (e.g., '=', '>', '<', etc.).
+     * @param mixed $value The value to compare.
+     * @return SqlFnInterface
      */
-    public function orWhere(string $field, string $operator, mixed $value): SqlFnInterface;
+    public function orWhere(string $field, string $operator, $value): SqlFnInterface;
 
     /**
-     * Ajoute un tri à la requête.
+     * Adds an ORDER BY clause to the SQL query.
      *
-     * @param string $field Le champ à trier.
-     * @param string $direction La direction du tri (ASC ou DESC).
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field name.
+     * @param string $direction The direction ('ASC' or 'DESC'). Default is 'ASC'.
+     * @return SqlFnInterface
      */
     public function orderBy(string $field, string $direction = 'ASC'): SqlFnInterface;
 
     /**
-     * Limite le nombre de résultats retournés par la requête.
+     * Adds a LIMIT clause to the SQL query.
      *
-     * @param int $limit Le nombre maximum de résultats.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param int $limit The number of records to limit.
+     * @return SqlFnInterface
      */
     public function limit(int $limit): SqlFnInterface;
 
     /**
-     * Définit l'offset des résultats retournés par la requête.
+     * Adds an OFFSET clause to the SQL query.
      *
-     * @param int $offset Le décalage des résultats.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param int $offset The number of records to offset.
+     * @return SqlFnInterface
      */
     public function offset(int $offset): SqlFnInterface;
 
     /**
-     * Exécute la requête et retourne les résultats.
+     * Executes the built SQL query and returns the results.
      *
-     * @return array Les résultats de la requête.
+     * @return array The query results.
      */
     public function execute(): array;
 
     /**
-     * Insère des données dans une table.
+     * Inserts data into a table.
      *
-     * @param string $table Le nom de la table.
-     * @param array $data Les données à insérer sous forme de tableau associatif.
-     * @return int L'ID de la ligne insérée.
+     * @param string $table The table name.
+     * @param array $data The data to insert (associative array).
+     * @return int The last insert ID.
      */
     public function insert(string $table, array $data): int;
 
     /**
-     * Met à jour des données dans une table.
+     * Updates data in a table.
      *
-     * @param string $table Le nom de la table.
-     * @param array $data Les données à mettre à jour sous forme de tableau associatif.
-     * @param int $id L'ID de la ligne à mettre à jour.
-     * @return int Le nombre de lignes affectées.
+     * @param string $table The table name.
+     * @param array $data The data to update (associative array).
+     * @param int $id The ID of the record to update.
+     * @return int The number of affected rows.
      */
     public function update(string $table, array $data, int $id): int;
 
     /**
-     * Supprime une ligne dans une table.
+     * Deletes a record from a table.
      *
-     * @param string $table Le nom de la table.
-     * @param int $id L'ID de la ligne à supprimer.
-     * @return int Le nombre de lignes affectées.
+     * @param string $table The table name.
+     * @param int $id The ID of the record to delete.
+     * @return int The number of affected rows.
      */
     public function delete(string $table, int $id): int;
 
     /**
-     * Ajoute une jointure à la requête.
+     * Counts the number of records.
      *
-     * @param string $table Le nom de la table à joindre.
-     * @param string $field1 Le champ de la table principale.
-     * @param string $operator L'opérateur de comparaison.
-     * @param string $field2 Le champ de la table jointe.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field to count. Default is '*'.
+     * @return int The count of records.
      */
-    public function join(string $table, string $field1, string $operator, string $field2): SqlFnInterface;
+    public function count(string $field = '*'): int;
 
     /**
-     * Ajoute une jointure gauche à la requête.
+     * Adds a WHERE IN condition to the SQL query.
      *
-     * @param string $table Le nom de la table à joindre.
-     * @param string $field1 Le champ de la table principale.
-     * @param string $operator L'opérateur de comparaison.
-     * @param string $field2 Le champ de la table jointe.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field name.
+     * @param array $values The values for the IN clause.
+     * @return SqlFnInterface
      */
-    public function leftJoin(string $table, string $field1, string $operator, string $field2): SqlFnInterface;
+    public function whereIn(string $field, array $values): SqlFnInterface;
 
     /**
-     * Ajoute une jointure droite à la requête.
+     * Adds an AND WHERE IN condition to the SQL query.
      *
-     * @param string $table Le nom de la table à joindre.
-     * @param string $field1 Le champ de la table principale.
-     * @param string $operator L'opérateur de comparaison.
-     * @param string $field2 Le champ de la table jointe.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field name.
+     * @param array $values The values for the IN clause.
+     * @return SqlFnInterface
      */
-    public function rightJoin(string $table, string $field1, string $operator, string $field2): SqlFnInterface;
+    public function andWhereIn(string $field, array $values): SqlFnInterface;
 
     /**
-     * Ajoute une jointure interne à la requête.
+     * Adds an OR WHERE IN condition to the SQL query.
      *
-     * @param string $table Le nom de la table à joindre.
-     * @param string $field1 Le champ de la table principale.
-     * @param string $operator L'opérateur de comparaison.
-     * @param string $field2 Le champ de la table jointe.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field name.
+     * @param array $values The values for the IN clause.
+     * @return SqlFnInterface
      */
-    public function innerJoin(string $table, string $field1, string $operator, string $field2): SqlFnInterface;
+    public function orWhereIn(string $field, array $values): SqlFnInterface;
 
     /**
-     * Ajoute une clause GROUP BY à la requête.
+     * Adds a GROUP BY clause to the SQL query.
      *
-     * @param string $field Le champ par lequel grouper les résultats.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field name.
+     * @return SqlFnInterface
      */
     public function groupBy(string $field): SqlFnInterface;
 
     /**
-     * Ajoute une condition HAVING à la requête.
+     * Adds a HAVING condition to the SQL query.
      *
-     * @param string $field Le champ à comparer.
-     * @param string $operator L'opérateur de comparaison.
-     * @param mixed $value La valeur à comparer.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $field The field name.
+     * @param string $operator The operator (e.g., '=', '>', '<', etc.).
+     * @param mixed $value The value to compare.
+     * @return SqlFnInterface
      */
-    public function having(string $field, string $operator, mixed $value): SqlFnInterface;
+    public function having(string $field, string $operator, $value): SqlFnInterface;
 
     /**
-     * Compte le nombre de lignes correspondant à la requête.
+     * Begins a database transaction.
      *
-     * @return int Le nombre de lignes.
+     * @return void
      */
-    public function count(): int;
+    public function beginTransaction(): void;
 
     /**
-     * Calcule la somme d'un champ.
+     * Commits a database transaction.
      *
-     * @param string $field Le champ dont calculer la somme.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @return void
      */
-    public function sum(string $field): SqlFnInterface;
+    public function commit(): void;
 
     /**
-     * Calcule la moyenne d'un champ.
+     * Rolls back a database transaction.
      *
-     * @param string $field Le champ dont calculer la moyenne.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @return void
      */
-    public function avg(string $field): SqlFnInterface;
+    public function rollBack(): void;
 
     /**
-     * Calcule la valeur minimale d'un champ.
+     * Executes a callable within a database transaction.
      *
-     * @param string $field Le champ dont calculer la valeur minimale.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param callable $callback The callback to execute.
+     * @return void
      */
-    public function min(string $field): SqlFnInterface;
+    public function executeTransaction(callable $callback): void;
 
     /**
-     * Calcule la valeur maximale d'un champ.
+     * Adds a raw SQL query.
      *
-     * @param string $field Le champ dont calculer la valeur maximale.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
-     */
-    public function max(string $field): SqlFnInterface;
-
-    /**
-     * Sélectionne des valeurs distinctes d'un champ.
-     *
-     * @param string $field Le champ dont sélectionner les valeurs distinctes.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
-     */
-    public function distinct(string $field): SqlFnInterface;
-
-    /**
-     * Exécute une requête brute.
-     *
-     * @param string $query La requête SQL brute.
-     * @return SqlFnInterface Retourne l'instance pour permettre le chaînage.
+     * @param string $query The raw SQL query.
+     * @return SqlFnInterface
      */
     public function raw(string $query): SqlFnInterface;
-
-
 }

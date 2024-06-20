@@ -1,14 +1,14 @@
 <?php
 
-namespace Sthom\Back\Controller;
+namespace Sthom\Back\App\Controller;
 
-use Sthom\Back\Entity\User;
+use Sthom\Back\App\Entity\User;
+use Sthom\Back\App\Repository\UserRepository;
 use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
+use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;
 use Sthom\Back\Kernel\Framework\Services\JwtManager;
 use Sthom\Back\Kernel\Framework\Services\PasswordHasher;
 use Sthom\Back\Kernel\Framework\Services\Request;
-use Sthom\Back\Repository\UserRepository;
 
 class UserController extends AbstractController
 {
@@ -76,6 +76,15 @@ class UserController extends AbstractController
         $id = $request->getAttribute('id');
         $user = $userRepository->find($id);
         return $this->send($user);
+    }
+
+    #[Route(path: '/', requestType: 'GET', guarded: false)]
+    public final function showdsq(UserRepository $userRepository, Request $request): array
+    {
+
+        return $this->send([
+            'message' => 'User created',
+        ]);
     }
 
 }

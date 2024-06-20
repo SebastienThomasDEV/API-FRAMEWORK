@@ -7,22 +7,16 @@ use Exception;
 use Psr\Http\Message\ResponseInterface as ServerResponse;
 use Psr\Http\Message\ServerRequestInterface as ServerRequest;
 use Slim\Factory\AppFactory;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
+use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;
+use Sthom\Back\Kernel\Framework\Middlewares\CorsMiddleware;
 use Sthom\Back\Kernel\Framework\Middlewares\JwtMiddleware;
 use Sthom\Back\Kernel\Framework\Model\Model;
 use Sthom\Back\Kernel\Framework\Services\Request;
-use Sthom\Back\Kernel\Framework\Utils\ClassReader;
+use Sthom\Back\Kernel\Framework\Utils\ControllerReader;
+use Sthom\Back\Kernel\Framework\Utils\Logger;
 use Sthom\Back\Kernel\Framework\Utils\SingletonTrait;
 use Throwable;
 
-/**
- * Classe Kernel
- *
- * Cette classe est le cœur de l'application,
- * responsable de l'initialisation des services et du démarrage de l'application.
- *
- * @package Sthom\Back\Kernel
- */
 class Kernel
 {
     use SingletonTrait;
@@ -33,22 +27,13 @@ class Kernel
 
     private \Slim\App $app;
 
-    /**
-     * Méthode principale pour démarrer l'application.
-     *
-     * Cette méthode configure l'environnement,
-     * initialise les services,
-     * définit les routes et démarre l'application Slim.
-     *
-     * @return void
-     */
     public final function run(): void
     {
         try {
             $env = $this->initializeEnvironment();
             $this->initializeModel($env);
             $this->initializeApp();
-            $this->configureMiddlewares();
+            $this->configureMiddlewares($env);
             $this->configureRoutes();
             $this->app->run();
         } catch (Exception|Throwable $e) {
@@ -56,33 +41,28 @@ class Kernel
         }
     }
 
-    /**
-     * Initialise l'environnement de l'application.
-     *
-     * @return void
-     */
     private function initializeEnvironment(): array
     {
-        $dotenv = Dotenv::createImmutable(self::ENV_FILE_PATH);
-        return $dotenv->load();
+        try {
+            $dotenv = Dotenv::createImmutable(self::ENV_FILE_PATH);
+            return $dotenv->load();
+        } catch (Exception $e) {
+            $this->handleFatalError($e);
+            return [];
+        }
     }
 
-    /**
-     * Initialise le modèle de l'application.
-     *  @param array $env
-     * @return void
-     */
+
     private function initializeModel(array $env): void
     {
-        $model = Model::getInstance();
-        $model->config($env);
+        try {
+            $model = Model::getInstance();
+            $model->config($env);
+        } catch (Exception $e) {
+            $this->handleFatalError($e);
+        }
     }
 
-    /**
-     * Initialise l'application Slim.
-     *
-     * @return void
-     */
     private function initializeApp(): void
     {
         $this->app = AppFactory::create();
@@ -91,41 +71,30 @@ class Kernel
         $this->addOptionsRoute();
     }
 
-    /**
-     * Configure les middlewares de l'application.
-     *
-     * @return void
-     */
-    private function configureMiddlewares(): void
+    private function configureMiddlewares(array $env): void
     {
-        $this->app->add(new JwtMiddleware());
+        $allowedOrigins = explode(',', $env['ALLOWED_ORIGINS']);
+        $this->app->add(new CorsMiddleware($allowedOrigins));
+        if (filter_var($env['ENABLE_JWT'], FILTER_VALIDATE_BOOLEAN)) {
+            $this->app->add(new JwtMiddleware());
+        }
         $this->app->addRoutingMiddleware();
     }
 
-    /**
-     * Configure les routes de l'application.
-     *
-     * @return void
-     */
     private function configureRoutes(): void
     {
-        $routes = ClassReader::readRoutes();
+        ControllerReader::init( 'Sthom\Back\App\Controller\\', __DIR__ . '/../App/Controller/');
+        $routes = ControllerReader::readRoutes();
         $this->app->add(new JwtMiddleware($routes));
         foreach ($routes as $route) {
             $this->configureRoute($route);
         }
     }
 
-    /**
-     * Configure une route spécifique.
-     *
-     * @param Route $route La route à configurer.
-     * @return void
-     */
     private function configureRoute(Route $route): void
     {
         $requestType = $route->getRequestType();
-        $path = $route->getPath();;
+        $path = $route->getPath();
         $this->app->{$requestType}($path, function (ServerRequest $serverRequest, ServerResponse $serverResponse) use ($route) {
             try {
                 Request::getInstance()->configure($serverRequest);
@@ -136,66 +105,36 @@ class Kernel
                     $response = $controller->{$route->getFn()}(...$route->getParameters());
                     $serverResponse->getBody()->write(json_encode($response));
                 }
-                return $this->addCorsHeaders($serverResponse);
+                return $serverResponse->withHeader('Content-Type', 'application/json');
             } catch (Exception|Throwable $e) {
                 return $this->handleError($serverResponse, $e);
             }
         });
     }
 
-    /**
-     * Ajoute les en-têtes CORS à la réponse.
-     *
-     * @param ServerResponse $response
-     * @return ServerResponse
-     */
-    private function addCorsHeaders(ServerResponse $response): ServerResponse
-    {
-        return $response
-            ->withHeader('Content-Type', 'application/json')
-            ->withHeader('Access-Control-Allow-Origin', '*')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
-            ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With')
-            ->withHeader('Access-Control-Max-Age', '86400');
-    }
-
     public final function addOptionsRoute(): void
     {
         $this->app->options('/{routes:.+}', function (ServerRequest $serverRequest, ServerResponse $response) {
-            return $this->addCorsHeaders($response);
-        });
-        $this->app->options('/', function (ServerRequest $serverRequest, ServerResponse $response) {
-            return $this->addCorsHeaders($response);
+            return $response;
         });
     }
 
-    /**
-     * Gestion des erreurs pour les routes.
-     *
-     * @param ServerResponse $response La réponse serveur.
-     * @param Throwable $exception L'exception capturée.
-     * @return ServerResponse La réponse serveur avec l'erreur.
-     */
     private function handleError(ServerResponse $response, Throwable $exception): ServerResponse
     {
         $error = [
             'error' => true,
-            'message' => $exception->getMessage(),
-            'code' => $exception->getCode()
+            'message' => $_ENV['APP_ENV'] === self::ENV_DEV ? $exception->getMessage() : 'An error occurred',
+            'code' => $exception->getCode(),
+            'trace' => $_ENV['APP_ENV'] === self::ENV_DEV ? $exception->getTraceAsString() : '',
         ];
+        Logger::error($exception->getMessage());
         $response->getBody()->write(json_encode($error));
-        return $response->withStatus(500)->withHeader('Content-Type', 'application/json');
+        return $response->withStatus(500);
     }
 
-    /**
-     * Gestion des erreurs fatales.
-     * Cette méthode est appelée en cas d'erreur fatale dans le code.
-     *
-     * @param Throwable $exception L'exception capturée.
-     */
     private function handleFatalError(Throwable $exception): void
     {
-        error_log($exception->getMessage());
+        Logger::error($exception->getMessage());
         http_response_code(500);
         header('Content-Type: application/json');
         echo json_encode([
@@ -204,4 +143,5 @@ class Kernel
         ]);
         exit;
     }
+
 }

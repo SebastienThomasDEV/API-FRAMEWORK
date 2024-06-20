@@ -1,6 +1,6 @@
 <?php
 
-namespace Sthom\Back\Kernel\Framework\Utils;
+namespace Sthom\Back\Kernel\Framework\Model\Interfaces;
 
 interface UserInterface
 {

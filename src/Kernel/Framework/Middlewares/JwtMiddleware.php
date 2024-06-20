@@ -6,7 +6,8 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
+use Slim\Psr7\Response as SlimResponse;
+use Sthom\Back\Kernel\Framework\Annotations\Routing\Route;
 use Sthom\Back\Kernel\Framework\Model\Model;
 use Sthom\Back\Kernel\Framework\Services\JwtManager;
 
@@ -105,7 +106,8 @@ class JwtMiddleware implements MiddlewareInterface
      */
     private function handleError(ServerRequestInterface $request, RequestHandlerInterface $handler, string $errorMessage): ResponseInterface
     {
-        $request = $request->withAttribute('error', $errorMessage);
-        return $handler->handle($request);
+        $response = new SlimResponse();
+        $response->getBody()->write(json_encode(['error' => true, 'message' => $errorMessage]));
+        return $response->withHeader('Content-Type', 'application/json');
     }
 }

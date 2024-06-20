@@ -1,14 +1,14 @@
 <?php
 
-namespace Sthom\Back\Repository;
+namespace Sthom\Back\App\Repository;
 
 use Sthom\Back\Kernel\Framework\AbstractRepository;
 
-class TechnicalSheetRepository extends AbstractRepository
+class RegistrationRepository extends AbstractRepository
 {
     protected function getTableName(): string
     {
-        return 'technical_sheet';
+        return 'registration';
     }
     
 

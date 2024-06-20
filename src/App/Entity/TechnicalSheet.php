@@ -1,15 +1,29 @@
 <?php
 
-namespace Sthom\Back\Entity;
+namespace Sthom\Back\App\Entity;
 
-use Sthom\Back\Kernel\Framework\Utils\EntityInterface;
+use Sthom\Back\Kernel\Framework\Annotations\Mapper\Column;
+use Sthom\Back\Kernel\Framework\Annotations\Mapper\Entity;
+use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 
+
+#[Entity(table: 'technical_sheet')]
 class TechnicalSheet implements EntityInterface
 {
+
+    #[Column(name: 'id', type: 'int')]
     private ?int $id = null;
+
+    #[Column(name: 'name', type: 'string')]
     private ?string $name;
+
+    #[Column(name: 'description', type: 'string')]
     private ?string $description;
+
+    #[Column(name: 'weight', type: 'float')]
     private ?float $weight;
+
+    #[Column(name: 'image', type: 'string')]
     private ?string $image;
 
     public function getId(): ?int
