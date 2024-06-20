@@ -81,7 +81,6 @@ class UserController extends AbstractController
     #[Route(path: '/', requestType: 'GET', guarded: false)]
     public final function index(UserRepository $userRepository): array
     {
-        dd($userRepository->findAll());
         return $this->send([
             'message' => 'Welcome to the user controller',
         ]);
