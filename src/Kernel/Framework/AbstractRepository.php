@@ -62,7 +62,7 @@ abstract class AbstractRepository
     {
         try {
             $query = $this->customQuery()
-                ->select($this->entityClassname)
+                ->select($this->entityTable)
                 ->where('id', '=', $id)
                 ->execute()[0] ?? [];
             return $this->hydrate($query) ?? null;
@@ -83,7 +83,7 @@ abstract class AbstractRepository
     {
         try {
             $query = $this->customQuery()
-                ->select($this->entityClassname)
+                ->select($this->entityTable)
                 ->where($field, '=', $value)
                 ->execute()[0] ?? [];
 
@@ -105,7 +105,7 @@ abstract class AbstractRepository
     {
         try {
             $result = $this->customQuery()
-                ->select($this->entityClassname)
+                ->select($this->entityTable)
                 ->where($field, '=', $value)
                 ->execute();
 
@@ -189,11 +189,11 @@ abstract class AbstractRepository
             $data = $data->toArray();
             if (isset($data['id'])) {
                 $this->customQuery()
-                    ->update($this->entityClassname, $data, $data['id']);
+                    ->update($this->entityTable, $data, $data['id']);
                 return $data['id'];
             } else {
                 return $this->customQuery()
-                    ->insert($this->entityClassname, $data);
+                    ->insert($this->entityTable, $data);
             }
         } catch (QueryExecutionException $e) {
             Logger::error("Error saving entity", ['exception' => $e, 'data' => $data]);
@@ -211,7 +211,7 @@ abstract class AbstractRepository
     {
         try {
             return $this->customQuery()
-                    ->delete($this->entityClassname, $id) > 0;
+                    ->delete($this->entityTable, $id) > 0;
         } catch (QueryExecutionException $e) {
             Logger::error("Error deleting entity with ID: {$id}", ['exception' => $e]);
             return false;

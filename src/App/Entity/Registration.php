@@ -12,7 +12,7 @@ use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 class Registration implements EntityInterface
 {
 
-    private ?int $id = null;
+    private ?int $id;
 
     public function getId(): ?int
     {

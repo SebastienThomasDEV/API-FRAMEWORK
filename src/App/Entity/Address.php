@@ -13,24 +13,23 @@ class Address implements EntityInterface
 {
 
 
-    private ?int $id = null;
+    private ?int $id;
 
 
-    private ?string $street = null;
+    private ?string $street;
 
 
-    private ?int $streetNumber = null;
+    private ?int $streetNumber;
 
 
-    private ?int $zipCode = null;
+    private ?int $zipCode;
 
 
-    private ?string $town = null;
+    private ?string $town;
 
 
-    private ?string $addressComplement = null;
+    private ?string $addressComplement;
 
-    private ?int $userId = null;
 
     public function __construct(array $data = [])
     {
@@ -40,7 +39,6 @@ class Address implements EntityInterface
         $this->zipCode = $data['zipCode'] ?? null;
         $this->town = $data['town'] ?? null;
         $this->addressComplement = $data['addressComplement'] ?? null;
-        $this->userId = $data['userId'] ?? null;
     }
 
     public function getId(): ?int

@@ -135,6 +135,8 @@ class SqlFn implements SqlFnInterface
     {
         try {
             foreach ($this->bindParams as $key => $value) {
+                unset($this->bindParams[$key]);
+                $this->bindParams[":$key"] = $value;
                 if (is_bool($value)) {
                     $this->bindParams[$key] = $value ? 1 : 0;
                 }

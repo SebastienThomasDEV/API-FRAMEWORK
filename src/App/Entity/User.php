@@ -14,7 +14,7 @@ class User implements UserInterface, EntityInterface
 {
 
 
-    private ?int $id = null;
+    private ?int $id;
 
     private ?string $email;
 
@@ -24,7 +24,6 @@ class User implements UserInterface, EntityInterface
 
     private ?string $pwd;
 
-    private array $addresses = [];
     private ?string $roles;
 
     public function __construct(array $data = [])

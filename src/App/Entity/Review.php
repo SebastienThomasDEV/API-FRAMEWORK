@@ -12,7 +12,7 @@ class Review implements EntityInterface
 {
 
 
-    private ?int $id = null;
+    private ?int $id;
 
 
     private ?string $comment;

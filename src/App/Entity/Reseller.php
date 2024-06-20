@@ -12,7 +12,7 @@ use Sthom\Back\Kernel\Framework\Model\Interfaces\EntityInterface;
 class Reseller implements EntityInterface
 {
 
-    private ?int $id = null;
+    private ?int $id;
 
 
     private ?string $company;
