@@ -7,11 +7,11 @@ Options All -Indexes
 
   # Redirige vers le dossier public
   # Cette règle réécrit toutes les requêtes à la racine ("/") vers le dossier "public/"
-  RewriteRule ^$ public/ [L]
+  RewriteRule ^$ private/ [L]
 
   # Cette règle réécrit toutes les requêtes vers le dossier "public/"
   # Par exemple, une requête vers "/images/image.jpg" serait réécrite en "/public/images/image.jpg"
-  RewriteRule (.*) public/$1 [L]
+  RewriteRule (.*) private/$1 [L]
 
   # Les lignes suivantes sont commentées, mais si elles étaient décommentées, elles redirigeraient toutes les requêtes HTTP vers HTTPS
   # Active le module de réécriture d'URL

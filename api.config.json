@@ -1,0 +1,16 @@
+{
+  "admin": {
+    "credentials": {
+      "username": "admin",
+      "password": "admin"
+    }
+  },
+  "cors": {
+    "origin": ["*"],
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    "headers.allow": ["Authorization", "Content-Type"],
+    "headers.expose": [],
+    "credentials": true,
+    "cache": 0
+  }
+}

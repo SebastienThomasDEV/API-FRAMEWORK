@@ -2,7 +2,9 @@
     "name": "sthom/back",
     "autoload": {
         "psr-4": {
-            "Sthom\\Back\\": "src/"
+            "Sthom\\Back\\": "src/",
+            "Sthom\\App\\": "app/",
+            "Sthom\\Admin\\": "private/src/"
         }
     },
     "authors": [
@@ -20,6 +22,9 @@
         "firebase/php-jwt": "^6.10",
         "vlucas/phpdotenv": "^5.6",
         "ext-readline": "*",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "compositephp/db": "^0.4.2",
+        "tuupola/cors-middleware": "^1.4",
+        "doctrine/dbal": "^3.8"
     }
 }
