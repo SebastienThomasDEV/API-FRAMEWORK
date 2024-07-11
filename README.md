@@ -72,8 +72,7 @@ Créez un contrôleur dans le répertoire `src/Controller` :
 
 namespace Sthom\Back\Controller;
 
-use Sthom\Back\Kernel\Framework\AbstractController;
-use Sthom\Back\Kernel\Framework\Annotations\Route;
+use Sthom\Back\AbstractController;use Sthom\Back\Annotations\Route;
 
 class ExampleController extends AbstractController
 {

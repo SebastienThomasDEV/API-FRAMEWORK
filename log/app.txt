@@ -1,0 +1,1767 @@
+2024-06-10 07:48:44 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 07:55:37 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 08:07:49 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 08:13:08 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 08:19:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 08:19:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:45:18 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:45:52 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:46:07 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:46:16 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:46:48 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:47:04 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:47:06 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:47:38 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:47:56 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:48:05 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:48:06 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:48:22 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:49:05 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:49:45 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:49:59 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 09:50:33 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 13:59:18 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:01:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:01:31 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), );
+2024-06-10 14:02:00 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:03:06 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:03:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:03:31 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:03:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:03:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:03:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:03:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:03:32 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:03:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:06:12 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:06:12 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:06:12 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:07:14 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:07:14 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:07:14 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:07:14 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:07:14 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:07:14 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:07:15 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:07:15 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:07:15 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:07:15 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:08:30 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:08:30 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:08:30 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:32:32 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:32:32 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:32:32 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255));
+2024-06-10 14:33:42 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:33:42 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:34:35 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:34:53 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:34:53 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:34:53 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-10 14:38:18 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:38:18 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:38:18 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-10 14:38:18 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:38:18 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:38:18 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:38:18 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:38:18 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:38:18 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:38:19 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:38:19 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:38:19 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:38:19 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:38:19 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:38:19 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:38:19 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:38:19 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:38:19 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), addresses_id INT,FOREIGN KEY (addresses_id) REFERENCES address(id));
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-10 14:38:58 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-10 14:38:58 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-10 14:38:58 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-10 14:44:52 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:46:00 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:46:27 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:48:08 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:49:00 : ERROR : Cannot instantiate abstract class Sthom\Back\Kernel\Framework\Utils\Logger
+2024-06-10 14:50:40 : ERROR : Too few arguments to function Sthom\Back\Kernel\Framework\AbstractRepository::__construct(), 0 passed in C:\Apache24\htdocs\back\src\Kernel\Framework\Utils\ControllerReader.php on line 169 and exactly 2 expected
+2024-06-10 14:55:08 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:08:43 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:11:54 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:13:57 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:14:47 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-10 15:14:47 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id' cannot be null
+2024-06-10 15:14:47 : ERROR : Class "Sthom\Back\Kernel\Framework\Model\Exceptions\QueryExecutionException" not found
+2024-06-10 15:20:22 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-10 15:20:22 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id' cannot be null
+2024-06-10 15:20:22 : ERROR : Error saving entity
+2024-06-10 15:20:28 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:21:26 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:21:38 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-10 15:21:52 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-12 21:56:36 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 21:56:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 21:56:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-12 21:56:36 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 21:56:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 21:56:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 21:56:36 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 21:56:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 21:56:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 21:56:36 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 21:56:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 21:56:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 21:56:37 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 21:56:37 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 21:56:37 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 21:56:37 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 21:56:37 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 21:56:37 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 22:00:51 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:00:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 22:00:51 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-12 22:01:24 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:01:24 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 22:01:25 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:01:25 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 22:01:25 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-12 22:01:35 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:01:35 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 22:01:35 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255), user_id INT,FOREIGN KEY (user_id) REFERENCES user(id));
+2024-06-12 22:01:35 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:01:35 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 22:01:35 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 22:01:35 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:01:35 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:01:35 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 22:01:35 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:01:35 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:01:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 22:01:36 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:01:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 22:01:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 22:01:36 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:01:36 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 22:01:36 : INFO : Executing query: CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, roles VARCHAR(255), email VARCHAR(255), surname VARCHAR(255), name VARCHAR(255), pwd VARCHAR(255), FOREIGN KEY (id) REFERENCES address(user_id));
+2024-06-12 22:02:51 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:02:51 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS address;
+2024-06-12 22:03:15 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:03:33 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:32:17 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:32:17 : INFO : Executing query: CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, street VARCHAR(255), street_number VARCHAR(255), zip_code INT, town VARCHAR(255), address_complement VARCHAR(255));
+2024-06-12 22:34:44 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:35:01 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:35:54 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:39:08 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:41:11 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:43:32 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:44:09 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:48:24 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:49:44 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:51:01 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:51:11 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:55:10 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:56:07 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS registration;
+2024-06-12 22:56:46 : INFO : Executing query: CREATE TABLE IF NOT EXISTS registration (id INT PRIMARY KEY);
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:56:46 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, company VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), website VARCHAR(255));
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS reseller;
+2024-06-12 22:56:46 : INFO : Executing query: CREATE TABLE IF NOT EXISTS reseller (id INT PRIMARY KEY, comment VARCHAR(255), rating INT);
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS technical_sheet;
+2024-06-12 22:56:46 : INFO : Executing query: CREATE TABLE IF NOT EXISTS technical_sheet (id INT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), weight FLOAT, image VARCHAR(255));
+2024-06-12 22:56:46 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:56:46 : INFO : Executing query: SET foreign_key_checks = 0; DROP TABLE IF EXISTS user;
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:57:35 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'reseller';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'technical_sheet';
+2024-06-12 22:57:56 : INFO : Executing query: SHOW TABLES LIKE 'user';
+2024-06-12 22:58:21 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:58:31 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:58:31 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:58:33 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:58:33 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-12 22:58:34 : INFO : Executing query: SHOW TABLES LIKE 'address';
+2024-06-12 22:58:34 : INFO : Executing query: SHOW TABLES LIKE 'registration';
+2024-06-20 08:21:17 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-20 08:21:26 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-20 08:25:45 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-20 08:26:49 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-06-20 08:33:15 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 08:33:16 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.user' doesn't exist
+2024-06-20 08:33:16 : ERROR : Error saving entity
+2024-06-20 08:33:38 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-06-20 08:33:56 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-06-20 08:34:08 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-06-20 08:34:16 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-06-20 08:38:51 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-06-20 09:21:30 : ERROR : Method not allowed. Must be one of: POST, OPTIONS
+2024-06-20 09:24:17 : ERROR : Too few arguments to function Sthom\Back\Kernel\Framework\AbstractRepository::__construct(), 0 passed in C:\Apache24\htdocs\back\src\Kernel\Framework\Utils\ControllerReader.php on line 169 and exactly 1 expected
+2024-06-20 09:25:16 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:25:16 : ERROR : Error finding all entities
+2024-06-20 09:25:17 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:25:17 : ERROR : Error finding all entities
+2024-06-20 09:25:32 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 09:25:32 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.user' doesn't exist
+2024-06-20 09:25:32 : ERROR : Error saving entity
+2024-06-20 09:25:36 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:25:36 : ERROR : Error finding all entities
+2024-06-20 09:28:11 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:28:11 : ERROR : Error hydrating entity
+2024-06-20 09:28:11 : ERROR : Error hydrating entity
+2024-06-20 09:28:19 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 09:28:22 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:28:22 : ERROR : Error hydrating entity
+2024-06-20 09:28:22 : ERROR : Error hydrating entity
+2024-06-20 09:28:22 : ERROR : Error hydrating entity
+2024-06-20 09:29:39 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:29:39 : ERROR : Error hydrating entity
+2024-06-20 09:29:39 : ERROR : Error hydrating entity
+2024-06-20 09:29:39 : ERROR : Error hydrating entity
+2024-06-20 09:29:46 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:30:15 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:30:38 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:30:38 : ERROR : Error hydrating entity
+2024-06-20 09:30:38 : ERROR : Error hydrating entity
+2024-06-20 09:30:38 : ERROR : Error hydrating entity
+2024-06-20 09:30:54 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:33:14 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:33:24 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:33:24 : ERROR : Cannot access private property Sthom\Back\App\Entity\User::$id
+2024-06-20 09:41:20 : INFO : Executing query: SELECT * FROM user
+2024-06-20 09:42:49 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673f99939dda1.62713675
+2024-06-20 09:42:49 : ERROR : Error finding entity with ID: 2
+2024-06-20 09:43:12 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673f9b0541790.66354583
+2024-06-20 09:43:12 : ERROR : Error finding entity with ID: 2
+2024-06-20 09:44:09 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673f9e98133d0.64879037
+2024-06-20 09:44:09 : ERROR : Error finding entity with ID: 2
+2024-06-20 09:44:37 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fa054d6d50.16195931
+2024-06-20 09:44:37 : ERROR : Error finding entity with ID: 2
+2024-06-20 09:44:38 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fa06375801.10299181
+2024-06-20 09:44:38 : ERROR : Error finding entity with ID: 2
+2024-06-20 09:44:38 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fa06720528.47058745
+2024-06-20 09:44:38 : ERROR : Error finding entity with ID: 2
+2024-06-20 09:44:38 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fa06a3a750.11184027
+2024-06-20 09:44:38 : ERROR : Error finding entity with ID: 2
+2024-06-20 09:47:15 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673faa31f9190.42992294
+2024-06-20 09:47:15 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:47:27 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673faafd8a092.86597267
+2024-06-20 09:48:43 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fafb017a86.25200151
+2024-06-20 09:48:43 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:50:23 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fb5f7f21a6.81584099
+2024-06-20 09:50:23 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:50:37 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fb6d6078c2.58616587
+2024-06-20 09:50:37 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:50:38 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fb6e4c6531.02284201
+2024-06-20 09:50:38 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:50:38 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fb6e751c70.22460213
+2024-06-20 09:50:38 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:50:38 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fb6eae0da3.94054492
+2024-06-20 09:50:38 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:50:38 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fb6ed1ade7.28361426
+2024-06-20 09:50:38 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:50:48 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fb787a48a3.62840948
+2024-06-20 09:51:07 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fb8b40da86.07794829
+2024-06-20 09:51:07 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:08 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fb8c52a8d7.29394095
+2024-06-20 09:51:08 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:29 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fba1382df4.72487299
+2024-06-20 09:51:29 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:29 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fba1d29777.03539028
+2024-06-20 09:51:29 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:30 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fba20169c7.63320701
+2024-06-20 09:51:30 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:30 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fba22bfc13.27376641
+2024-06-20 09:51:30 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:30 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fba2545907.29914162
+2024-06-20 09:51:30 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:30 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fba285f675.10799237
+2024-06-20 09:51:30 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:30 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fba2ab49b2.70025986
+2024-06-20 09:51:30 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:30 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fba2d72c93.89105699
+2024-06-20 09:51:30 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:51:31 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fba309c1e0.52977120
+2024-06-20 09:51:31 : ERROR : Error finding entity with ID: 3
+2024-06-20 09:52:04 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fbc47517b3.90675995
+2024-06-20 09:52:16 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fbd0756310.02619379
+2024-06-20 09:52:19 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fbd3336863.22967832
+2024-06-20 09:52:20 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fbd4116425.19659087
+2024-06-20 09:52:21 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fbd541aae3.45187690
+2024-06-20 09:52:22 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6673fbd6c8ea19.64254016
+2024-06-20 10:31:16 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667404f473f0f8.42251920
+2024-06-20 10:31:16 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:33:41 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405858010d9.87355138
+2024-06-20 10:33:41 : ERROR : Unsupported operand types: string + string
+2024-06-20 10:34:20 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405ac4d2164.25953694
+2024-06-20 10:34:20 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:34:43 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405c3e3e146.60876504
+2024-06-20 10:34:43 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:34:44 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405c4b42588.57330758
+2024-06-20 10:34:44 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:34:45 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405c53eaf22.60911877
+2024-06-20 10:34:45 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:34:45 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405c57bfdd9.22540671
+2024-06-20 10:34:45 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:35:06 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405dac39513.44256631
+2024-06-20 10:35:06 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:35:07 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405db9359e9.25922807
+2024-06-20 10:35:07 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:35:08 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405dc238331.53511989
+2024-06-20 10:35:08 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:35:28 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405f07ffe98.45434478
+2024-06-20 10:35:28 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405f07ffe98.45434478
+2024-06-20 10:35:28 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:35:29 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405f145c236.47408467
+2024-06-20 10:35:29 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405f145c236.47408467
+2024-06-20 10:35:29 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:35:29 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405f1a4cba0.77585951
+2024-06-20 10:35:29 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667405f1a4cba0.77585951
+2024-06-20 10:35:29 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:36:13 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674061d93f905.30968210
+2024-06-20 10:36:13 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:36:14 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674061e915275.57529178
+2024-06-20 10:36:14 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:36:14 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674061eef4d21.73965617
+2024-06-20 10:36:14 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:36:15 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674061f3949b1.96849984
+2024-06-20 10:36:15 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:36:15 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674061faeec42.18863992
+2024-06-20 10:36:15 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:36:15 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674061fee7f66.12986818
+2024-06-20 10:36:15 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:36:16 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667406203b6f01.73860951
+2024-06-20 10:36:16 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:36:16 : INFO : Executing query: SELECT * FROM user WHERE id = :id_66740620b23961.60177061
+2024-06-20 10:36:16 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:37:17 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674065d573606.09083593
+2024-06-20 10:38:06 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674068e621155.79279334
+2024-06-20 10:38:09 : INFO : Executing query: SELECT * FROM user WHERE id = :id_66740691493068.03259651
+2024-06-20 10:38:10 : INFO : Executing query: SELECT * FROM user WHERE id = :id_66740692c76b47.54416671
+2024-06-20 10:38:12 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667406940c5074.90499186
+2024-06-20 10:40:24 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667407184dab67.48535481
+2024-06-20 10:40:25 : INFO : Executing query: SELECT * FROM user WHERE id = :id_66740719b644f7.41383765
+2024-06-20 10:40:27 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674071b4325a4.26568888
+2024-06-20 10:40:58 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674073ae007c0.86933376
+2024-06-20 10:41:11 : INFO : Executing query: SELECT * FROM user WHERE id = :id_66740747e11446.39428575
+2024-06-20 10:44:42 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674081a13fc18.65997208
+2024-06-20 10:45:34 : INFO : Executing query: SELECT * FROM user WHERE id = :id_6674084e867045.84178999
+2024-06-20 10:45:45 : INFO : Executing query: SELECT * FROM user WHERE id = :id_66740859100a20.58355241
+2024-06-20 10:45:45 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:47:08 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667408ac3359a5.64791758
+2024-06-20 10:47:08 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:47:09 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667408ad4c2272.97224527
+2024-06-20 10:47:09 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:47:09 : INFO : Executing query: SELECT * FROM user WHERE id = :id_667408adf2fcf5.73596187
+2024-06-20 10:47:09 : ERROR : Error finding entity with ID: 1
+2024-06-20 10:50:48 : INFO : Executing query: SELECT * FROM user WHERE id = :id667409884103b
+2024-06-20 10:51:26 : INFO : Executing query: SELECT * FROM user WHERE id = :id667409ae38bdf
+2024-06-20 10:51:36 : INFO : Executing query: SELECT * FROM user WHERE id = :id667409b892ccb
+2024-06-20 10:51:48 : INFO : Executing query: SELECT * FROM user WHERE id = :id667409c4c0df4
+2024-06-20 10:52:46 : INFO : Executing query: SELECT * FROM user WHERE id = :id667409fef170c
+2024-06-20 10:53:57 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:54:28 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:54:28 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 10:54:28 : ERROR : Error saving entity
+2024-06-20 10:55:05 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:55:05 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 10:55:05 : ERROR : Error saving entity
+2024-06-20 10:55:05 : INFO : Executing query: SELECT * FROM user
+2024-06-20 10:56:30 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:56:30 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 10:56:30 : ERROR : Error saving entity
+2024-06-20 10:56:30 : INFO : Executing query: SELECT * FROM user
+2024-06-20 10:56:30 : ERROR : Call to undefined method Sthom\Back\App\Controller\UserController::toArray()
+2024-06-20 10:56:57 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:56:57 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 10:56:57 : ERROR : Error saving entity
+2024-06-20 10:56:57 : INFO : Executing query: SELECT * FROM user
+2024-06-20 10:56:57 : ERROR : Call to a member function toArray() on array
+2024-06-20 10:57:11 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:57:11 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 10:57:11 : ERROR : Error saving entity
+2024-06-20 10:57:11 : INFO : Executing query: SELECT * FROM user
+2024-06-20 10:57:29 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:57:29 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 10:57:29 : ERROR : Error saving entity
+2024-06-20 10:57:29 : INFO : Executing query: SELECT * FROM user
+2024-06-20 10:57:29 : ERROR : Call to a member function toArray() on array
+2024-06-20 10:57:56 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:57:56 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 10:57:56 : ERROR : Error saving entity
+2024-06-20 10:57:56 : INFO : Executing query: SELECT * FROM user
+2024-06-20 10:58:09 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:58:09 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 10:58:09 : ERROR : Error saving entity
+2024-06-20 10:58:09 : INFO : Executing query: SELECT * FROM user
+2024-06-20 10:59:27 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 10:59:27 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 10:59:27 : ERROR : Error saving entity
+2024-06-20 10:59:27 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:00:12 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 11:00:12 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 11:00:12 : ERROR : Error saving entity
+2024-06-20 11:00:12 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:00:13 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 11:00:13 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 11:00:13 : ERROR : Error saving entity
+2024-06-20 11:00:13 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:00:14 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 11:00:14 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 11:00:14 : ERROR : Error saving entity
+2024-06-20 11:00:14 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:00:29 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 11:00:29 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 11:00:29 : ERROR : Error saving entity
+2024-06-20 11:00:29 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:01:21 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 11:01:21 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 11:01:21 : ERROR : Error saving entity
+2024-06-20 11:01:21 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:01:44 : INFO : Executing query: INSERT INTO user (id, roles, email, surname, name, pwd) VALUES (:id, :roles, :email, :surname, :name, :pwd)
+2024-06-20 11:01:44 : ERROR : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'tactactrkl@mail.com' for key 'email'
+2024-06-20 11:01:44 : ERROR : Error saving entity
+2024-06-20 11:01:44 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:02:53 : ERROR : Not found.
+2024-06-20 11:03:02 : ERROR : Not found.
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Error initializing repository
+2024-06-20 11:18:28 : ERROR : Not found.
+2024-06-20 11:19:19 : ERROR : Class "User" does not exist
+2024-06-20 11:19:19 : ERROR : Class "User" does not exist
+2024-06-20 11:19:19 : ERROR : Class "User" does not exist
+2024-06-20 11:19:19 : ERROR : Class "User" does not exist
+2024-06-20 11:19:19 : ERROR : Class "User" does not exist
+2024-06-20 11:19:19 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:19 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:19 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:19 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:19 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:19 : ERROR : Not found.
+2024-06-20 11:19:40 : ERROR : Class "User" does not exist
+2024-06-20 11:19:40 : ERROR : Class "User" does not exist
+2024-06-20 11:19:40 : ERROR : Class "User" does not exist
+2024-06-20 11:19:40 : ERROR : Class "User" does not exist
+2024-06-20 11:19:40 : ERROR : Class "User" does not exist
+2024-06-20 11:19:40 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:40 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:40 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:40 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:40 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:53 : ERROR : Class "User" does not exist
+2024-06-20 11:19:53 : ERROR : Class "User" does not exist
+2024-06-20 11:19:53 : ERROR : Class "User" does not exist
+2024-06-20 11:19:53 : ERROR : Class "User" does not exist
+2024-06-20 11:19:53 : ERROR : Class "User" does not exist
+2024-06-20 11:19:53 : ERROR : Class "User" does not exist
+2024-06-20 11:19:53 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:53 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:53 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:53 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:53 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:19:53 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:19:53 : ERROR : Error hydrating entity
+2024-06-20 11:19:53 : ERROR : Error hydrating entity
+2024-06-20 11:19:53 : ERROR : Error hydrating entity
+2024-06-20 11:19:53 : ERROR : Error hydrating entity
+2024-06-20 11:20:26 : ERROR : Class "User" does not exist
+2024-06-20 11:20:26 : ERROR : Class "User" does not exist
+2024-06-20 11:20:26 : ERROR : Class "User" does not exist
+2024-06-20 11:20:26 : ERROR : Class "User" does not exist
+2024-06-20 11:20:26 : ERROR : Class "User" does not exist
+2024-06-20 11:20:26 : ERROR : Class "User" does not exist
+2024-06-20 11:20:26 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:20:26 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:20:26 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:20:26 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:20:26 : ERROR : Class "TechnicalSheet" does not exist
+2024-06-20 11:20:26 : ERROR : Typed property Sthom\Back\Kernel\Framework\AbstractRepository::$entityTable must not be accessed before initialization
+2024-06-20 11:21:19 : ERROR : Call to a member function getArguments() on null
+2024-06-20 11:22:23 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:24:04 : INFO : Executing query: SELECT * FROM user
+2024-06-20 11:35:22 : INFO : Executing query: SELECT * FROM Sthom\Back\App\Entity\User WHERE id = :id667413fa379aa
+2024-06-20 11:35:22 : ERROR : Error finding entity with ID: 1
+2024-06-20 11:36:09 : INFO : Executing query: SELECT * FROM Sthom\Back\App\Entity\User WHERE id = :id66741429ae182
+2024-06-20 11:36:09 : ERROR : Error finding entity with ID: 1
+2024-06-20 11:37:53 : INFO : Executing query: SELECT * FROM user WHERE id = :id667414918fcc0
+2024-07-10 07:45:41 : INFO : Executing query: SELECT * FROM user
+2024-07-10 07:46:20 : INFO : Executing query: SELECT * FROM user
+2024-07-10 07:46:23 : ERROR : Sthom\Back\Kernel\Framework\AbstractRepository::find(): Argument #1 ($id) must be of type int, string given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\App\Controller\UserController.php on line 77
+2024-07-10 07:47:03 : ERROR : Sthom\Back\Kernel\Framework\AbstractRepository::find(): Argument #1 ($id) must be of type int, string given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\App\Controller\UserController.php on line 77
+2024-07-10 07:47:18 : ERROR : Sthom\Back\Kernel\Framework\AbstractRepository::find(): Argument #1 ($id) must be of type int, string given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\App\Controller\UserController.php on line 77
+2024-07-10 07:47:26 : INFO : Executing query: SELECT * FROM user WHERE id = :id668e3c8e9ab7d
+2024-07-10 07:47:36 : INFO : Executing query: SELECT * FROM technical_sheet
+2024-07-10 07:47:40 : INFO : Executing query: SELECT * FROM technical_sheet WHERE id = :id668e3c9c15aeb
+2024-07-10 07:48:15 : INFO : Executing query: SELECT * FROM technical_sheet WHERE id = :id668e3cbf3b71f
+2024-07-10 07:55:37 : ERROR : Class "Sthom\Back\App\Entity\User" does not exist
+2024-07-10 07:55:37 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-07-10 08:01:57 : WARNING : Class Sthom\App\Controller\UserController does not exist.
+2024-07-10 08:01:57 : ERROR : Not found.
+2024-07-10 08:01:57 : WARNING : Class Sthom\App\Controller\UserController does not exist.
+2024-07-10 08:01:57 : ERROR : Not found.
+2024-07-10 08:01:57 : WARNING : Class Sthom\App\Controller\UserController does not exist.
+2024-07-10 08:01:57 : ERROR : Not found.
+2024-07-10 08:02:19 : WARNING : Class Sthom\App\Controller\UserController does not exist.
+2024-07-10 08:04:07 : ERROR : Error reading controller files: Unable to open controller directory: C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src/app/controller/
+2024-07-10 08:04:07 : ERROR : Not found.
+2024-07-10 08:05:02 : WARNING : Class Sthom\App\controllerUserController does not exist.
+2024-07-10 08:05:02 : ERROR : Not found.
+2024-07-10 08:05:14 : WARNING : Class Sthom\App\controllerUserController does not exist.
+2024-07-10 08:07:07 : WARNING : Class Sthom\App\controller\UserController does not exist.
+2024-07-10 08:07:07 : ERROR : Not found.
+2024-07-10 08:07:17 : WARNING : Class Sthom\App\controller\UserController does not exist.
+2024-07-10 08:07:17 : ERROR : Not found.
+2024-07-10 08:07:18 : WARNING : Class Sthom\App\controller\UserController does not exist.
+2024-07-10 08:07:18 : ERROR : Not found.
+2024-07-10 08:07:18 : WARNING : Class Sthom\App\controller\UserController does not exist.
+2024-07-10 08:07:18 : ERROR : Not found.
+2024-07-10 08:09:45 : ERROR : Error reflecting class Sthom\App\controller\UserController: Class "Sthom\App\controller\UserController" does not exist
+2024-07-10 08:09:45 : ERROR : Not found.
+2024-07-10 08:09:46 : ERROR : Error reflecting class Sthom\App\controller\UserController: Class "Sthom\App\controller\UserController" does not exist
+2024-07-10 08:09:46 : ERROR : Not found.
+2024-07-10 08:09:46 : ERROR : Error reflecting class Sthom\App\controller\UserController: Class "Sthom\App\controller\UserController" does not exist
+2024-07-10 08:09:46 : ERROR : Not found.
+2024-07-10 08:09:46 : ERROR : Error reflecting class Sthom\App\controller\UserController: Class "Sthom\App\controller\UserController" does not exist
+2024-07-10 08:09:46 : ERROR : Not found.
+2024-07-10 08:09:46 : ERROR : Error reflecting class Sthom\App\controller\UserController: Class "Sthom\App\controller\UserController" does not exist
+2024-07-10 08:09:46 : ERROR : Not found.
+2024-07-10 08:16:53 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:18:22 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:18:24 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:18:52 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:26 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:26 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:27 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:27 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:27 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:27 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:27 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:27 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:28 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:19:32 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:20:31 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:21:39 : ERROR : Failed to parse dotenv file. Encountered an invalid name at [; JWT_USER_TABLE].
+2024-07-10 08:22:51 : ERROR : Error reflecting class Sthom\\Back\\controller\UserController: Class "Sthom\\Back\\controller\UserController" does not exist
+2024-07-10 08:23:18 : ERROR : Error reflecting class Sthom\\Back\\controller\UserController: Class "Sthom\\Back\\controller\UserController" does not exist
+2024-07-10 08:23:43 : WARNING : Class Sthom\\Back\\controller\UserController does not exist.
+2024-07-10 08:28:34 : ERROR : Database configuration error: missing DB_HOST
+2024-07-10 08:29:02 : ERROR : Database configuration error: missing DB_HOST
+2024-07-10 08:29:03 : ERROR : Database configuration error: missing DB_HOST
+2024-07-10 08:29:03 : ERROR : Database configuration error: missing DB_HOST
+2024-07-10 08:29:04 : ERROR : Database configuration error: missing DB_HOST
+2024-07-10 08:29:04 : ERROR : Database configuration error: missing DB_HOST
+2024-07-10 08:29:04 : ERROR : Database configuration error: missing DB_HOST
+2024-07-10 08:29:14 : ERROR : Database configuration error: missing DB_HOST
+2024-07-10 08:31:05 : ERROR : Error reading controller files: Unable to open controller directory: C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\srcapp/controller
+2024-07-10 08:31:36 : ERROR : Error reading controller files: Unable to open controller directory: C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\srcapp/controller
+2024-07-10 08:38:39 : ERROR : Unknown named parameter $guarded
+2024-07-10 08:43:17 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:44:36 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:44:37 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:44:37 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:45:32 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:45:42 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:46:00 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:46:25 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:46:26 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:46:26 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:46:27 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:46:27 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:46:27 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:46:27 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 08:46:41 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::isGuarded()
+2024-07-10 09:13:38 : ERROR : syntax error, unexpected token "private", expecting "("
+2024-07-10 09:13:39 : ERROR : syntax error, unexpected token "private", expecting "("
+2024-07-10 09:13:39 : ERROR : syntax error, unexpected token "private", expecting "("
+2024-07-10 09:13:40 : ERROR : syntax error, unexpected token "private", expecting "("
+2024-07-10 09:13:40 : ERROR : syntax error, unexpected token "private", expecting "("
+2024-07-10 09:13:40 : ERROR : syntax error, unexpected token "private", expecting "("
+2024-07-10 09:13:40 : ERROR : syntax error, unexpected token "private", expecting "("
+2024-07-10 09:24:06 : ERROR : Call to a member function newInstance() on null
+2024-07-10 09:26:23 : ERROR : Call to a member function newInstance() on null
+2024-07-10 09:29:30 : ERROR : Call to a member function newInstance() on null
+2024-07-10 09:29:53 : ERROR : Call to a member function newInstance() on null
+2024-07-10 09:32:42 : ERROR : Call to undefined method ReflectionAttribute::setController()
+2024-07-10 09:32:43 : ERROR : Call to undefined method ReflectionAttribute::setController()
+2024-07-10 09:32:43 : ERROR : Call to undefined method ReflectionAttribute::setController()
+2024-07-10 09:32:43 : ERROR : Call to undefined method ReflectionAttribute::setController()
+2024-07-10 09:32:44 : ERROR : Call to undefined method ReflectionAttribute::setController()
+2024-07-10 09:32:44 : ERROR : Call to undefined method ReflectionAttribute::setController()
+2024-07-10 09:34:21 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::setRequired()
+2024-07-10 09:37:29 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::setRequired()
+2024-07-10 09:39:29 : ERROR : Call to undefined method ReflectionMethod::getAttribute()
+2024-07-10 09:39:38 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::setRequired()
+2024-07-10 09:39:39 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::setRequired()
+2024-07-10 09:50:58 : ERROR : Call to undefined method Sthom\Back\Utils\ControllerReader::getRouteAttributes()
+2024-07-10 09:54:52 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::getExtraAttributes()
+2024-07-10 09:57:24 : ERROR : Attribute class "Sthom\Back\Annotations\extra\Required" not found
+2024-07-10 09:57:29 : ERROR : Attribute class "Sthom\Back\Annotations\extra\Required" not found
+2024-07-10 09:57:29 : ERROR : Attribute class "Sthom\Back\Annotations\extra\Required" not found
+2024-07-10 09:57:30 : ERROR : Attribute class "Sthom\Back\Annotations\extra\Required" not found
+2024-07-10 09:57:30 : ERROR : Attribute class "Sthom\Back\Annotations\extra\Required" not found
+2024-07-10 09:57:30 : ERROR : Attribute class "Sthom\Back\Annotations\extra\Required" not found
+2024-07-10 09:57:30 : ERROR : Attribute class "Sthom\Back\Annotations\extra\Required" not found
+2024-07-10 09:57:45 : ERROR : Call to undefined method Sthom\Back\Annotations\extra\Required::getName()
+2024-07-10 09:58:39 : ERROR : Call to undefined method ReflectionAttribute::getShortName()
+2024-07-10 09:58:39 : ERROR : Call to undefined method ReflectionAttribute::getShortName()
+2024-07-10 09:58:40 : ERROR : Call to undefined method ReflectionAttribute::getShortName()
+2024-07-10 09:58:40 : ERROR : Call to undefined method ReflectionAttribute::getShortName()
+2024-07-10 12:37:19 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::setExtraAttributes()
+2024-07-10 12:39:18 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::setExtraAttributes()
+2024-07-10 12:39:45 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::setExtraAttributes()
+2024-07-10 12:39:55 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::setExtraAttributes()
+2024-07-10 12:40:46 : ERROR : Call to undefined method Sthom\Back\Annotations\Route::setExtraAttributes()
+2024-07-10 12:42:37 : ERROR : Cannot use object of type ReflectionAttribute as array
+2024-07-10 12:44:28 : ERROR : Sthom\Back\Annotations\extra\Required::trigger(): Argument #1 ($app) must be of type Slim\App, Slim\Psr7\Request given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Kernel.php on line 99
+2024-07-10 13:33:45 : ERROR : Cannot assign null to property Sthom\Back\AbstractRepository::$entityManager of type Opis\ORM\EntityManager
+2024-07-10 13:35:26 : ERROR : Non-static method Sthom\Back\Container::get() cannot be called statically
+2024-07-10 13:35:27 : ERROR : Non-static method Sthom\Back\Container::get() cannot be called statically
+2024-07-10 14:37:24 : ERROR : Call to undefined method Opis\ORM\EntityManager::all()
+2024-07-10 14:40:28 : ERROR : SQLSTATE[HY000] [1049] Unknown database 'api?charset=utf8mb4_general_ci'
+2024-07-10 14:40:48 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.users' doesn't exist [ SELECT * FROM `users` ] 
+2024-07-10 15:01:48 : ERROR : Call to undefined method Opis\ORM\EntityManager::find()
+2024-07-10 15:02:51 : ERROR : Call to undefined method Opis\ORM\Core\EntityQuery::first()
+2024-07-10 15:02:52 : ERROR : Call to undefined method Opis\ORM\Core\EntityQuery::first()
+2024-07-10 15:02:52 : ERROR : Call to undefined method Opis\ORM\Core\EntityQuery::first()
+2024-07-10 15:11:01 : ERROR : Call to undefined method Opis\ORM\Core\EntityQuery::first()
+2024-07-11 08:28:53 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT AUTO_INCREMENT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`created_at` DATETIME NOT NULL,
+`updated_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 09:47:48 : ERROR : ReflectionClass::getProperties(): Argument #1 ($filter) must be of type ?int, string given
+2024-07-11 09:57:54 : ERROR : Call to undefined method Sthom\Back\Annotations\db\PrimaryKey::isUnique()
+2024-07-11 09:58:38 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:01:43 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:03:11 : ERROR : Sthom\Back\Parser\EntityReader::getEntityTable(): Return value must be of type string, array returned
+2024-07-11 10:04:00 : ERROR : Class "Sthom\Back\AbstractEntity" does not exist
+2024-07-11 10:07:46 : ERROR : Directory is already set
+2024-07-11 10:21:36 : ERROR : Non-static method Sthom\Back\Parser\EntityReader::getEntities() cannot be called statically
+2024-07-11 10:22:06 : ERROR : Call to undefined method Sthom\Back\Parser\ControllerReader::init()
+2024-07-11 10:23:13 : ERROR : The 'Sthom\Back\entity\User' must extend Opis\ORM\Entity
+2024-07-11 10:23:14 : ERROR : The 'Sthom\Back\entity\User' must extend Opis\ORM\Entity
+2024-07-11 10:23:14 : ERROR : The 'Sthom\Back\entity\User' must extend Opis\ORM\Entity
+2024-07-11 10:23:15 : ERROR : The 'Sthom\Back\entity\User' must extend Opis\ORM\Entity
+2024-07-11 10:41:30 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.users' doesn't exist [ SELECT * FROM `users` WHERE `id` = 1 ] 
+2024-07-11 10:42:51 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.users' doesn't exist [ SELECT * FROM `users` WHERE `id` = 1 ] 
+2024-07-11 10:44:01 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.users' doesn't exist [ SELECT * FROM `users` WHERE `id` = 1 ] 
+2024-07-11 10:45:09 : ERROR : Call to undefined method Opis\Database\Schema\CreateTable::column()
+2024-07-11 10:48:14 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:48:44 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:48:45 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:48:46 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:48:46 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:49:33 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:49:48 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:49:49 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:49:49 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:49:49 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:49:49 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:51:57 : ERROR : Call to a member function newInstance() on null
+2024-07-11 10:53:18 : ERROR : Call to a member function getName() on null
+2024-07-11 10:53:19 : ERROR : Call to a member function getName() on null
+2024-07-11 10:53:19 : ERROR : Call to a member function getName() on null
+2024-07-11 10:53:20 : ERROR : Call to a member function getName() on null
+2024-07-11 10:53:20 : ERROR : Call to a member function getName() on null
+2024-07-11 10:53:20 : ERROR : Call to a member function getName() on null
+2024-07-11 10:53:20 : ERROR : Call to a member function getName() on null
+2024-07-11 10:53:20 : ERROR : Call to a member function getName() on null
+2024-07-11 10:53:20 : ERROR : Call to a member function getName() on null
+2024-07-11 10:53:28 : ERROR : Call to undefined method Opis\Database\Schema\CreateTable::column()
+2024-07-11 10:53:28 : ERROR : Call to undefined method Opis\Database\Schema\CreateTable::column()
+2024-07-11 10:53:29 : ERROR : Call to undefined method Opis\Database\Schema\CreateTable::column()
+2024-07-11 12:06:16 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.users' doesn't exist [ SELECT * FROM `users` WHERE `id` = 1 ] 
+2024-07-11 12:15:22 : ERROR : Unsupported column type: Sthom\Back\entity\User
+2024-07-11 12:20:46 : ERROR : Cannot access private property Sthom\Back\Annotations\Table::$name
+2024-07-11 12:22:47 : ERROR : Cannot access private property Sthom\Back\Annotations\Table::$name
+2024-07-11 12:23:26 : ERROR : Cannot access private property Sthom\Back\Annotations\Table::$name
+2024-07-11 12:23:54 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.users' doesn't exist [ SELECT * FROM `users` WHERE `id` = 1 ] 
+2024-07-11 12:25:17 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.users' doesn't exist [ SELECT * FROM `users` WHERE `id` = 1 ] 
+2024-07-11 12:25:25 : ERROR : Attribute class "Sthom\Back\Annotations\Table" not found
+2024-07-11 12:27:11 : ERROR : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'api.users' doesn't exist [ SELECT * FROM `users` WHERE `id` = 1 ] 
+2024-07-11 12:29:17 : ERROR : Call to undefined method Sthom\Back\Parser\EntityReader::getPrimaryKey()
+2024-07-11 12:32:28 : ERROR : Call to undefined method ReflectionProperty::newInstance()
+2024-07-11 12:33:08 : ERROR : Call to undefined method ReflectionProperty::newInstance()
+2024-07-11 12:43:43 : ERROR : Sthom\Back\AbstractRepository::find(): Return value must be of type Opis\ORM\Entity, null returned
+2024-07-11 12:45:25 : ERROR : Sthom\Back\AbstractRepository::find(): Return value must be of type Opis\ORM\Entity, null returned
+2024-07-11 12:46:08 : ERROR : syntax error, unexpected token "readonly", expecting end of file
+2024-07-11 12:46:41 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 12:46:41 : ERROR : Sthom\Back\AbstractRepository::find(): Return value must be of type Opis\ORM\Entity, null returned
+2024-07-11 12:46:45 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 12:46:45 : ERROR : Sthom\Back\AbstractRepository::find(): Return value must be of type Opis\ORM\Entity, null returned
+2024-07-11 12:46:46 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 12:46:46 : ERROR : Sthom\Back\AbstractRepository::find(): Return value must be of type Opis\ORM\Entity, null returned
+2024-07-11 12:49:27 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 12:54:00 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:00:27 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:27:03 : ERROR : Call to a member function getName() on null
+2024-07-11 13:34:11 : ERROR : Call to a member function newInstance() on null
+2024-07-11 13:37:17 : ERROR : Call to a member function newInstance() on null
+2024-07-11 13:39:29 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:39:52 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:43:18 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:44:18 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:44:31 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:54:20 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:54:40 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:54:40 : ERROR : Key material must be a string, resource, or OpenSSLAsymmetricKey
+2024-07-11 13:54:49 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:54:49 : ERROR : Key material must be a string, resource, or OpenSSLAsymmetricKey
+2024-07-11 13:55:40 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:55:40 : ERROR : Wrong number of segments
+2024-07-11 13:55:47 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:55:47 : ERROR : Incorrect key for this algorithm
+2024-07-11 13:55:49 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:55:49 : ERROR : Incorrect key for this algorithm
+2024-07-11 13:56:09 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:56:09 : ERROR : Incorrect key for this algorithm
+2024-07-11 13:56:11 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:56:11 : ERROR : Incorrect key for this algorithm
+2024-07-11 13:56:12 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:56:12 : ERROR : Incorrect key for this algorithm
+2024-07-11 13:56:19 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 13:56:19 : ERROR : Incorrect key for this algorithm
+2024-07-11 13:57:44 : ERROR : Incorrect key for this algorithm
+2024-07-11 14:02:40 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:02:40 : ERROR : Wrong number of segments
+2024-07-11 14:02:44 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:02:44 : ERROR : Incorrect key for this algorithm
+2024-07-11 14:07:07 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:07:07 : ERROR : Too few arguments to function Firebase\JWT\Key::__construct(), 1 passed in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Annotations\middlewares\Required.php on line 46 and exactly 2 expected
+2024-07-11 14:07:38 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:07:38 : ERROR : Firebase\JWT\Key::__construct(): Argument #2 ($algorithm) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Annotations\middlewares\Required.php on line 46
+2024-07-11 14:07:53 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:07:53 : ERROR : Firebase\JWT\Key::__construct(): Argument #2 ($algorithm) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Annotations\middlewares\Required.php on line 46
+2024-07-11 14:08:18 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:08:18 : ERROR : Object of class Firebase\JWT\Key could not be converted to string
+2024-07-11 14:08:53 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:08:53 : ERROR : Object of class Firebase\JWT\Key could not be converted to string
+2024-07-11 14:08:54 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:08:54 : ERROR : Object of class Firebase\JWT\Key could not be converted to string
+2024-07-11 14:08:59 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:08:59 : ERROR : Object of class Firebase\JWT\Key could not be converted to string
+2024-07-11 14:09:02 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:09:02 : ERROR : Object of class Firebase\JWT\Key could not be converted to string
+2024-07-11 14:09:06 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:09:06 : ERROR : Object of class Firebase\JWT\Key could not be converted to string
+2024-07-11 14:10:44 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:10:44 : ERROR : OpenSSL unable to validate key
+2024-07-11 14:11:22 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:11:37 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:12:58 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:12:58 : ERROR : Firebase\JWT\JWT::decode(): Argument #1 ($jwt) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Annotations\middlewares\Required.php on line 41
+2024-07-11 14:13:12 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:13:12 : ERROR : Firebase\JWT\JWT::decode(): Argument #1 ($jwt) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Annotations\middlewares\Required.php on line 41
+2024-07-11 14:13:20 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:13:36 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:13:36 : ERROR : Firebase\JWT\JWT::decode(): Argument #3 ($headers) must be of type ?stdClass, string given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Annotations\middlewares\Required.php on line 41
+2024-07-11 14:14:18 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:14:19 : ERROR : Key may not be empty
+2024-07-11 14:15:22 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:15:22 : ERROR : Class "Sthom\Back\Annotations\middlewares\stdClass" not found
+2024-07-11 14:17:08 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:17:08 : ERROR : "kid" empty, unable to lookup correct key
+2024-07-11 14:19:41 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:22:41 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:23:22 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:27:23 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:27:24 : ERROR : Call to undefined method Opis\Database\SQL\Where::fetch()
+2024-07-11 14:28:29 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:28:29 : ERROR : Call to undefined method Opis\Database\ResultSet::where()
+2024-07-11 14:30:58 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:31:15 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:31:15 : ERROR : Call to undefined method Opis\Database\ResultSet::where()
+2024-07-11 14:33:42 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:33:42 : ERROR : Call to undefined method Opis\Database\SQL\Query::get()
+2024-07-11 14:33:55 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:33:55 : ERROR : Call to undefined method Opis\Database\SQL\Query::all()
+2024-07-11 14:36:37 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:37:45 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:37:49 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:43:13 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:43:15 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:48:35 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:48:35 : ERROR : syntax error, unexpected token "}"
+2024-07-11 14:50:27 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:50:27 : ERROR : Opis\Database\SQL\Where::init(): Argument #1 ($column) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\vendor\opis\database\src\SQL\WhereStatement.php on line 55
+2024-07-11 14:50:55 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:51:17 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:51:22 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:51:22 : ERROR : Opis\Database\SQL\Where::init(): Argument #1 ($column) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\vendor\opis\database\src\SQL\WhereStatement.php on line 55
+2024-07-11 14:52:10 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:52:10 : ERROR : Opis\Database\SQL\Where::init(): Argument #1 ($column) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\vendor\opis\database\src\SQL\WhereStatement.php on line 55
+2024-07-11 14:52:58 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:52:58 : ERROR : Call to undefined method Opis\ORM\Core\EntityQuery::one()
+2024-07-11 14:53:09 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:53:30 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:53:43 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:53:43 : ERROR : Opis\Database\SQL\Where::init(): Argument #1 ($column) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\vendor\opis\database\src\SQL\WhereStatement.php on line 55
+2024-07-11 14:56:03 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:58:20 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:02:36 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:03:39 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:03:56 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:04:07 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:09:11 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:09:42 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:11:37 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:12:29 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:12:45 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:13:16 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:13:51 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:13:51 : ERROR : Method not allowed. Must be one of: POST, OPTIONS
+2024-07-11 15:14:01 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:15:24 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:15:24 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:17:11 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:18:34 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:18:34 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:18:36 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:18:36 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:18:52 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:18:52 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:19:42 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:19:42 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:19:58 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:06 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:13 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:16 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:43 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:43 : ERROR : Method not allowed. Must be one of: GET, OPTIONS
+2024-07-11 15:20:45 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:45 : ERROR : Method not allowed. Must be one of: GET, OPTIONS
+2024-07-11 15:20:48 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:21:06 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:21:09 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:21:09 : ERROR : Method not allowed. Must be one of: GET, OPTIONS
+2024-07-11 15:21:16 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:21:16 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-07-11 15:21:21 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:22:19 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
