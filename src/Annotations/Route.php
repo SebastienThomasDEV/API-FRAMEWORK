@@ -74,10 +74,10 @@ class Route
      */
     public function __construct(
         private readonly string $path,
-        private readonly string $requestType = self::REQUEST_TYPE_GET,
+        private readonly string $method = self::REQUEST_TYPE_GET,
     )
     {
-        $this->validateRequestType($requestType);
+        $this->validateRequestType($method);
     }
 
     /**
@@ -110,9 +110,9 @@ class Route
      *
      * @return string Le type de requête HTTP de la route.
      */
-    public final function getRequestType(): string
+    public final function getMethod(): string
     {
-        return strtolower($this->requestType);
+        return strtolower($this->method);
     }
 
     /**

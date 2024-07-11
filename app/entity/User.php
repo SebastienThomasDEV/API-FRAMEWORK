@@ -28,8 +28,8 @@ class User extends Entity implements UserInterface
     #[Column('password', ColumnType::STRING)]
     private string $password;
 
-    #[Column('roles', ColumnType::STRING)]
-    private string $roles;
+    #[Column('role', ColumnType::STRING)]
+    private string $role;
 
     #[Column('created_at', ColumnType::DATETIME)]
     private string $created_at;
@@ -42,7 +42,7 @@ class User extends Entity implements UserInterface
 
     public final function getName(): string
     {
-        return $this->name;
+        return $this->orm()->getColumn('name');
     }
 
     public final function setName(string $name): void
@@ -52,7 +52,7 @@ class User extends Entity implements UserInterface
 
     public final function getEmail(): string
     {
-        return $this->email;
+        return $this->orm()->getColumn('email');
     }
 
     public final function setEmail(string $email): void
@@ -62,7 +62,7 @@ class User extends Entity implements UserInterface
 
     public final function getPassword(): string
     {
-        return $this->password;
+        return $this->orm()->getColumn('password');
     }
 
     public final function setPassword(string $password): void
@@ -70,19 +70,19 @@ class User extends Entity implements UserInterface
         $this->password = $password;
     }
 
-    public final function getRoles(): string
+    public final function getRole(): string
     {
-        return $this->roles;
+        return $this->orm()->getColumn('roles');
     }
 
-    public final function setRoles(string $roles): void
+    public final function setRoles(string $role): void
     {
-        $this->roles = $roles;
+        $this->role = $role;
     }
 
     public final function getCreatedAt(): string
     {
-        return $this->created_at;
+        return $this->orm()->getColumn('created_at');
     }
 
     public final function setCreatedAt(string $created_at): void

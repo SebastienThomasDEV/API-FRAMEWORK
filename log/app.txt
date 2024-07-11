@@ -1467,3 +1467,301 @@ CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
 CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
 ) ] 
 2024-07-11 14:53:43 : ERROR : Opis\Database\SQL\Where::init(): Argument #1 ($column) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\vendor\opis\database\src\SQL\WhereStatement.php on line 55
+2024-07-11 14:56:03 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 14:58:20 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:02:36 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:03:39 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:03:56 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:04:07 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:09:11 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:09:42 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:11:37 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`roles` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:12:29 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:12:45 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:13:16 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:13:51 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:13:51 : ERROR : Method not allowed. Must be one of: POST, OPTIONS
+2024-07-11 15:14:01 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:15:24 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:15:24 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:17:11 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:18:34 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:18:34 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:18:36 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:18:36 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:18:52 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:18:52 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:19:42 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:19:42 : ERROR : Unknown named parameter $requestType
+2024-07-11 15:19:58 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:06 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:13 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:16 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:43 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:43 : ERROR : Method not allowed. Must be one of: GET, OPTIONS
+2024-07-11 15:20:45 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:20:45 : ERROR : Method not allowed. Must be one of: GET, OPTIONS
+2024-07-11 15:20:48 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:21:06 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:21:09 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:21:09 : ERROR : Method not allowed. Must be one of: GET, OPTIONS
+2024-07-11 15:21:16 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:21:16 : ERROR : Method not allowed. Must be one of: OPTIONS
+2024-07-11 15:21:21 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-11 15:22:19 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT,
+`name` VARCHAR(255),
+`email` VARCHAR(255),
+`password` VARCHAR(255),
+`role` VARCHAR(255),
+`created_at` DATETIME,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 

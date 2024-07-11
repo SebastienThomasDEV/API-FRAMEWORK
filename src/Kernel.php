@@ -100,12 +100,14 @@ class Kernel
 
     private function configureRoute(Route $route): void
     {
-        $requestType = $route->getRequestType();
+        $method = $route->getMethod();
         $path = $route->getPath();
-        $this->app->{$requestType}($path, function (ServerRequest $serverRequest, ServerResponse $serverResponse) use ($route) {
+        $this->app->{$method}($path, function (ServerRequest $serverRequest, ServerResponse $serverResponse) use ($route) {
             try {
                 foreach ($route->getMiddlewares() as $middleware) {
-                    $middleware::trigger($this->app, $serverRequest, $serverResponse);
+                    if (!$middleware::trigger($this->app, $serverRequest, $serverResponse)) {
+                        return $serverResponse->withHeader('Content-Type', 'application/json')->withStatus(401);
+                    }
                 }
                 $controller = $route->getController();
                 $response = $controller->{$route->getFn()}(...$route->getParameters());
@@ -145,7 +147,6 @@ class Kernel
         echo json_encode([
             'error' => true,
             'message' => $exception->getMessage(),
-            'trace' => $exception->getTraceAsString(),
         ]);
         exit;
     }

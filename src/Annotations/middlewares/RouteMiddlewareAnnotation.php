@@ -9,6 +9,6 @@ use Slim\App;
 interface RouteMiddlewareAnnotation
 {
 
-    static function trigger(App $app, ServerRequest $serverRequest, ServerResponse $serverResponse): void;
+    static function trigger(App $app, ServerRequest $serverRequest, ServerResponse $serverResponse):  bool;
 
 }

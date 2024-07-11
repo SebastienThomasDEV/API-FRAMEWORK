@@ -19,9 +19,7 @@ abstract class AbstractController
      */
     public final function send(mixed $data): array
     {
-        if ($data instanceof EntityInterface) {
-            $data = $data->toArray();
-        } elseif (is_array($data)) {
+        if (is_array($data)) {
             array_walk_recursive($data, function (&$value) {
                 if (is_object($value)) {
                     $value = $value->toArray();

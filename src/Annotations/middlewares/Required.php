@@ -28,7 +28,7 @@ class Required implements RouteMiddlewareAnnotation
 
 
     #[NoReturn]
-    public static function trigger(App $app, ServerRequest $serverRequest, ServerResponse $serverResponse): void
+    public static function trigger(App $app, ServerRequest $serverRequest, ServerResponse $serverResponse):  bool
     {
         $userConfig = Container::getInstance()->get("user");
         $token = $serverRequest->getHeader("Authorization");
@@ -48,27 +48,33 @@ class Required implements RouteMiddlewareAnnotation
             $decoded = JWT::decode($token, new Key($secretKey, $algorithm));
             $db = Container::getInstance()->get("database");
             if (!$db) {
-                $serverResponse->getBody()->write(json_encode(["error" => "Database not found"]));
-                $serverResponse->withStatus(500)->withHeader("Content-Type", "application/json");
+                $message = json_encode(["error" => "Database not found"]);
+                $serverResponse->getBody()->write($message);
+                return false;
             }
             $em = Container::getInstance()->get("entityManager");
             if (!$em) {
-                $serverResponse->getBody()->write(json_encode(["error" => "Entity manager not found"]));
-                $serverResponse->withStatus(500)->withHeader("Content-Type", "application/json");
+                $message = json_encode(["error" => "Entity manager not found"]);
+                $serverResponse->getBody()->write($message);
+                return false;
             }
-            $result = $em->query($userConfig->entity)
-                ->where($userConfig->identifier)->is($decoded->identifier)
-                ->where($userConfig->role)->is(self::$role)
-                ->all();
-            dd($result);
+            $result = $em->query($userConfig->entity)->find($decoded->id);
+            if (!$result) {
+                $message = json_encode(["error" => "User not found"]);
+                $serverResponse->getBody()->write($message);
+                return false;
+            }
+            if ($result->getRole() !== self::$role) {
+                $message = json_encode(["error" => "Unauthorized role"]);
+                $serverResponse->getBody()->write($message);
+                return false;
+            }
         } catch (\Exception $e) {
-            $serverResponse->getBody()->write(json_encode(["error" => "Unable to decode token"]));
-            $serverResponse->withStatus(401)->withHeader("Content-Type", "application/json");
+            $message = json_encode(["error" => "Unauthorized"]);
+            $serverResponse->getBody()->write($message);
+            return false;
         }
-
-
-
-
+        return true;
     }
 
 

@@ -14,7 +14,7 @@ interface UserInterface
     /*
      * Get the user roles
      */
-    public function getRoles(): string;
+    public function getRole(): string;
 
     /*
      * Set the user roles
