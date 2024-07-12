@@ -5,52 +5,42 @@ namespace Sthom\Back\Parser;
 use Exception;
 use RuntimeException;
 
+/**
+ * Cette classe abstraite sera étendue par les classes {@link ControllerReader} et {@link EntityReader}.
+ * Elle définit les méthodes nécessaires pour lire les fichiers d'un dossier.
+ *
+ * @package Sthom\Back\Parser
+ */
 abstract class AbstractReader
 {
 
+    /**
+     * Le namespace des classes à lire.
+     *
+     * @var string
+     */
     private string $namespace;
+
+    /**
+     * Le dossier contenant les classes à lire.
+     *
+     * @var string
+     */
     private string $dir;
 
-
+    /**
+     * Constructeur de la classe AbstractReader.
+     *
+     * @param string $namespace Le namespace des classes à lire.
+     * @param string $dir Le dossier contenant les classes à lire.
+     */
     public function __construct(string $namespace, string $dir)
     {
         $this->namespace = $namespace;
         $this->dir = $dir;
     }
 
-    public final function getNamespace(): string
-    {
-        return $this->namespace;
-    }
 
-    public final function getDir(): string
-    {
-        return $this->dir;
-    }
-
-    /**
-     * @throws Exception
-     */
-    public  final function setNamespace(string $namespace): void
-    {
-        if (!isset($this->namespace)) {
-            $this->namespace = $namespace;
-        } else {
-            throw new Exception("Namespace is already set");
-        }
-    }
-
-    /**
-     * @throws Exception
-     */
-    public  final function setDir(string $dir): void
-    {
-        if (!isset($this->dir)) {
-            $this->dir = $dir;
-        } else {
-            throw new Exception("Directory is already set");
-        }
-    }
 
     /**
      * Récupère les fichiers du dossier.
@@ -67,6 +57,17 @@ abstract class AbstractReader
         }
 
         return array_filter($files, fn($file) => $file !== '.' && $file !== '..' && pathinfo($file, PATHINFO_EXTENSION) === 'php');
+    }
+
+    // Getters
+    public final function getNamespace(): string
+    {
+        return $this->namespace;
+    }
+
+    public final function getDir(): string
+    {
+        return $this->dir;
     }
 
 

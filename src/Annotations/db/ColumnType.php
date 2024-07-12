@@ -3,7 +3,10 @@
 namespace Sthom\Back\Annotations\db;
 
 /**
- * This file is used to define the column types to match code types to SQL types
+ * Cette enumération permet de définir les types de colonnes de base de données
+ * Elle est utilisée pour définir les types des colonnes des entités de la base de données en tant qu'annotations
+ *
+ * @package Sthom\Back\Annotations\db
  */
 enum ColumnType
 {

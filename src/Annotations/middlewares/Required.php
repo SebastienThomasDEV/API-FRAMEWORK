@@ -10,23 +10,44 @@ use Psr\Http\Message\ServerRequestInterface as ServerRequest;
 use Slim\App;
 use Sthom\Back\Container;
 
+/**
+ * Cette classe est une annotation elle permet de définir un middleware de type Required qui est un middleware qui vérifie si un utilisateur est connecté et si son rôle est autorisé
+ * Ce n'est pas un middleware Slim, mais un middleware personnalisé et non global à l'application
+ *
+ * Cette classe permet de gérer les middlewares de type Required
+ *
+ * @see RouteMiddlewareAnnotation
+ *
+ * @package Sthom\Back\Annotations\middlewares
+ */
 #[\Attribute(\Attribute::TARGET_METHOD)]
 class Required implements RouteMiddlewareAnnotation
 {
-
+    /**
+     * Le rôle de l'utilisateur
+     * @var string $role
+     */
     static string $role;
+
+    /**
+     * Constructeur de la classe Required
+     *
+     * @param string $role
+     */
     public function __construct(
         string $role
     ) {
         self::$role = $role;
     }
 
-    public final function getRole(): string
-    {
-        return $this->role;
-    }
-
-
+    /**
+     * Cette méthode permet de déclencher le middleware Required
+     * Elle vérifie si l'utilisateur est connecté et si son rôle est autorisé
+     * - si oui, elle retourne true
+     *  - si non, elle retourne false et attache un message d'erreur à la réponse Slim
+     *
+     * @return void
+     */
     #[NoReturn]
     public static function trigger(App $app, ServerRequest $serverRequest, ServerResponse $serverResponse):  bool
     {

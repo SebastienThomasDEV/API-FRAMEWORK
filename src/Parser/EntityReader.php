@@ -3,15 +3,25 @@
 namespace Sthom\Back\Parser;
 use ReflectionClass;
 use Sthom\Back\Annotations\db\AbstractColumn;
-use Sthom\Back\Annotations\db\PrimaryKey;
-use Sthom\Back\Annotations\Table;
-use Sthom\Back\Annotations\UserTable;
+use Sthom\Back\Annotations\Entity;
+use Sthom\Back\Annotations\UserEntity;
 use Sthom\Back\Container;
-use Sthom\Back\Utils\UserInterface;
+use Sthom\Back\Database\UserInterface;
 
+/**
+ * Cette classe permet de lire les entités de l'application (les classes qui sont annotées par l'annotation {@link Entity})
+ * Elle étend la classe {@link AbstractReader}
+ * Elle lira les fichiers du dossier "Entity" et retournera les entités sous forme de tableau
+ * @package Sthom\Back\Parser
+ */
 class EntityReader extends AbstractReader
 {
-
+    /**
+     * Cette méthode permet de récupérer les entités de l'application sous forme de tableau
+     * Elle retourne un tableau associatif dont les clés sont les noms des tables et les valeurs sont des tableaux contenant les informations des entités
+     *
+     * @return array
+     */
     public final function getEntities(): array
     {
         $files = $this->getFiles();
@@ -23,7 +33,7 @@ class EntityReader extends AbstractReader
                 continue;
             }
             $entity = new ReflectionClass($fullClassName);
-            if ($entity->implementsInterface(UserInterface::class) && $annotation = $entity->getAttributes( UserTable::class)[0]) {
+            if ($entity->implementsInterface(UserInterface::class) && $annotation = $entity->getAttributes( UserEntity::class)[0]) {
                 $annotation = $annotation->newInstance();
                 $user = new \stdClass();
                 $user->entity = $entity->getName();
@@ -38,11 +48,18 @@ class EntityReader extends AbstractReader
                 'entity' => $entity->getName(),
                 'table' => $table,
                 'properties' => $properties,
+                'repository' => $table->getRepository()
             ];
         }
         return $entities;
     }
 
+    /**
+     * Cette méthode permet de récupérer les propriétés d'une entité sous forme de tableau
+     *
+     * @param ReflectionClass $entity
+     * @return array
+     */
     private static function getEntityProperties(ReflectionClass $entity): array
     {
         $properties = [];
@@ -55,10 +72,15 @@ class EntityReader extends AbstractReader
         return $properties;
     }
 
-
-    private static function getEntityTable(ReflectionClass $entity): Table
+    /**
+     * Cette méthode permet de récupérer les informations de la table d'une entité
+     *
+     * @param ReflectionClass $entity
+     * @return Entity
+     */
+    private static function getEntityTable(ReflectionClass $entity): Entity
     {
-        $table = $entity->getAttributes(Table::class)[0] ?? $entity->getAttributes(UserTable::class)[0];
+        $table = $entity->getAttributes(Entity::class)[0] ?? $entity->getAttributes(UserEntity::class)[0];
         return $table->newInstance();
     }
 

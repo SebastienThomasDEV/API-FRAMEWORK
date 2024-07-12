@@ -2,7 +2,6 @@
 
 namespace Sthom\Back;
 
-use Sthom\Back\Model\Interfaces\EntityInterface;
 
 /**
  * Classe abstraite AbstractController
@@ -13,6 +12,7 @@ abstract class AbstractController
 {
     /**
      * Prépare et renvoie les données sous forme de tableau.
+     * Elle s'assure que les objets soient convertis en tableau.
      *
      * @param array $data Les données à envoyer.
      * @return array Les données préparées.
@@ -26,8 +26,14 @@ abstract class AbstractController
                 }
             });
         } else {
-            $data = [];
+            $data = [
+                'data' => $data
+            ];
         }
         return $data;
     }
+
+
+
+
 }
