@@ -2,10 +2,18 @@
 
 namespace Sthom\Back\Utils;
 
+
+
 /**
  * Trait SingletonTrait
  *
  * Implémente le modèle de conception Singleton pour garantir qu'une seule instance de la classe existe.
+ *
+ * Elle est utilisée dans les classes:
+ * - {@link EntityManager}
+ * - {@link Kernel}
+ * - {@link Container}
+ * @package Sthom\Back\Utils
  */
 trait SingletonTrait
 {
@@ -32,7 +40,7 @@ trait SingletonTrait
     /**
      * Constructeur privé pour empêcher l'instanciation directe.
      */
-    private function __construct()
+    private final function __construct()
     {
     }
 

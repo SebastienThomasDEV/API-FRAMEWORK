@@ -7,15 +7,13 @@ use Exception;
 use JetBrains\PhpStorm\NoReturn;
 use Opis\Database\Connection;
 use Opis\Database\Database;
-use Opis\ORM\EntityManager;
 use Psr\Http\Message\ResponseInterface as ServerResponse;
 use Psr\Http\Message\ServerRequestInterface as ServerRequest;
 use Slim\Factory\AppFactory;
 use Sthom\Back\Annotations\Route;
-use Sthom\Back\entity\User;
+use Sthom\Back\Database\Schema;
 use Sthom\Back\Parser\ControllerReader;
 use Sthom\Back\Parser\EntityReader;
-use Sthom\Back\repository\UserRepository;
 use Sthom\Back\Utils\Logger;
 use Sthom\Back\Utils\SingletonTrait;
 use Throwable;
@@ -62,11 +60,15 @@ class Kernel
             $connection = new Connection($env['DB_URL'], $env['DB_USER'], $env['DB_PASS']);
             $db = new Database($connection);
             $entities = $entityReader->getEntities();
+            $repositories = [];
+            foreach ($entities as $entity) {
+                $repository = $entity['repository'];
+                $repositories[$repository] = new $repository($entity['entity'], $entity['table']->getName());
+            }
+            Container::getInstance()->set("repositories", $repositories);
             $schema = new Schema($entities);
             $schema->build($db);
-            $entityManager = new EntityManager($connection);
-            Container::getInstance()->set("entityManager", $entityManager);
-            Container::getInstance()->set("database", $db);
+            Container::getInstance()->set(Database::class, $db);
         } catch (Exception $e) {
             $this->handleFatalError($e);
         }

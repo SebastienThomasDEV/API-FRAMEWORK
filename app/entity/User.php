@@ -3,96 +3,96 @@
 namespace Sthom\Back\entity;
 
 
-use Opis\ORM\{
-    Entity
-};
 use Sthom\Back\Annotations\db\Column;
 use Sthom\Back\Annotations\db\ColumnType;
 use Sthom\Back\Annotations\db\PrimaryKey;
-use Sthom\Back\Annotations\UserTable;
-use Sthom\Back\Utils\UserInterface;
+use Sthom\Back\Annotations\Entity;
+use Sthom\Back\Database\AbstractEntity;
+use Sthom\Back\Database\UserInterface;
+use Sthom\Back\repository\UserRepository;
 
-#[UserTable( name: 'users', identifier: 'email')]
-class User extends Entity implements UserInterface
+#[Entity(name: 'users', repository: UserRepository::class)]
+class User extends AbstractEntity implements UserInterface
 {
 
     #[PrimaryKey('id', ColumnType::INT)]
     private ?int $id = null;
 
     #[Column('name', ColumnType::STRING)]
-    private string $name;
+    private ?string $name = null;
 
     #[Column('email', ColumnType::STRING)]
-    private string $email;
+    private ?string $email = null;
 
     #[Column('password', ColumnType::STRING)]
-    private string $password;
+    private ?string $password = null;
 
     #[Column('role', ColumnType::STRING)]
-    private string $role;
+    private ?string $role = null;
 
     #[Column('created_at', ColumnType::DATETIME)]
-    private string $created_at;
+    private ?string $created_at = null;
 
 
-    public final function getId(): int
+    public final function getId(): ?int
     {
         return $this->id;
     }
 
-    public final function getName(): string
+    public final function getName(): ?string
     {
-        return $this->orm()->getColumn('name');
+        return $this->name;
     }
 
-    public final function setName(string $name): void
+    public final function setName(string $name): self
     {
         $this->name = $name;
+        return $this;
     }
 
-    public final function getEmail(): string
+    public final function getEmail(): ?string
     {
-        return $this->orm()->getColumn('email');
+        return $this->email;
     }
 
-    public final function setEmail(string $email): void
+    public final function setEmail(string $email): self
     {
         $this->email = $email;
+        return $this;
     }
 
-    public final function getPassword(): string
+    public final function getPassword(): ?string
     {
-        return $this->orm()->getColumn('password');
+        return $this->password;
     }
 
-    public final function setPassword(string $password): void
+    public final function setPassword(string $password): self
     {
         $this->password = $password;
+        return $this;
     }
 
-    public final function getRole(): string
+    public final function getRole(): ?string
     {
-        return $this->orm()->getColumn('roles');
+        return $this->role;
     }
 
-    public final function setRoles(string $role): void
+    public final function setRole(string $role): self
     {
         $this->role = $role;
+        return $this;
     }
 
-    public final function getCreatedAt(): string
+    public final function getCreatedAt(): ?string
     {
-        return $this->orm()->getColumn('created_at');
+        return $this->created_at;
     }
 
-    public final function setCreatedAt(string $created_at): void
+    public final function setCreatedAt(string $created_at): self
     {
         $this->created_at = $created_at;
+        return $this;
     }
 
-    public final function getIdentifier(): ?int
-    {
-        return $this->id;
-    }
 
 }

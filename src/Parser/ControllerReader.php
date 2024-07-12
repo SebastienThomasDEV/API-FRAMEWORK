@@ -10,6 +10,7 @@ use RuntimeException;
 use Sthom\Back\AbstractRepository;
 use Sthom\Back\Annotations\middlewares\RouteMiddlewareAnnotation;
 use Sthom\Back\Annotations\Route;
+use Sthom\Back\Container;
 use Sthom\Back\Utils\Logger;
 use Sthom\Back\Utils\ServiceInterface;
 
@@ -131,8 +132,7 @@ use Sthom\Back\Utils\ServiceInterface;
                 $service->initialize([]);
                 $services[] = $service;
             } else if ($class->isSubclassOf(AbstractRepository::class)) {
-                $repository = $parameterType->getName();
-                $services[] = new $repository();
+                $services[] = Container::getInstance()->get("repositories")[$parameterType->getName()];
             }
         }
         return $services;

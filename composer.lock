@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3aff03189c45a0828d19d89a68376958",
+    "content-hash": "182fe4ae8821e6f33f50cc0c46bb1f37",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -297,63 +297,6 @@
                 "source": "https://github.com/opis/database/tree/master"
             },
             "time": "2018-06-05T09:56:12+00:00"
-        },
-        {
-            "name": "opis/orm",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/opis/orm.git",
-                "reference": "54566774f59b09678c36d74bc4d78b5a3a532b2c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/opis/orm/zipball/54566774f59b09678c36d74bc4d78b5a3a532b2c",
-                "reference": "54566774f59b09678c36d74bc4d78b5a3a532b2c",
-                "shasum": ""
-            },
-            "require": {
-                "opis/database": "^4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Opis\\ORM\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Marius Sarca",
-                    "email": "marius.sarca@gmail.com"
-                },
-                {
-                    "name": "Sorin Sarca",
-                    "email": "sarca_sorin@hotmail.com"
-                }
-            ],
-            "description": "Powerful ORM library",
-            "homepage": "https://opis.io/orm",
-            "keywords": [
-                "data-mapper",
-                "orm"
-            ],
-            "support": {
-                "issues": "https://github.com/opis/orm/issues",
-                "source": "https://github.com/opis/orm/tree/master"
-            },
-            "time": "2018-09-04T18:52:48+00:00"
         },
         {
             "name": "phpoption/phpoption",
