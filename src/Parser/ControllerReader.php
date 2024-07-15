@@ -12,8 +12,8 @@ use Sthom\Back\AbstractRepository;
 use Sthom\Back\Annotations\middlewares\RouteMiddlewareAnnotation;
 use Sthom\Back\Annotations\Route;
 use Sthom\Back\Container;
+use Sthom\Back\Service\ServiceInterface;
 use Sthom\Back\Utils\Logger;
-use Sthom\Back\Utils\ServiceInterface;
 
 /**
  * Classe abstraite ClassReader

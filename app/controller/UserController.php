@@ -2,7 +2,6 @@
 
 namespace Sthom\Back\controller;
 
-use http\Env\Request;
 use JetBrains\PhpStorm\NoReturn;
 use Psr\Http\Message\ServerRequestInterface;
 use Sthom\Back\AbstractController;

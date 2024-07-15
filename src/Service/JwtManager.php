@@ -2,14 +2,12 @@
 
 namespace Sthom\Back\Service;
 
-use Sthom\Back\Utils\ServiceInterface;
-
 class JwtManager implements ServiceInterface
 {
 
-    private string $algo;
+    private readonly string $algo;
 
-    private string $key;
+    private readonly string $key;
 
 
     public final function initialize(): void
@@ -44,26 +42,6 @@ class JwtManager implements ServiceInterface
         return json_decode(base64_decode(str_replace('_', '/', str_replace('-','+',explode('.', $token)[1]))), true);
     }
 
-
-    public final function setAlgo(string $algo): void
-    {
-        $this->algo = $algo;
-    }
-
-    public final function setKey(string $key): void
-    {
-        $this->key = $key;
-    }
-
-    public final function getAlgo(): string
-    {
-        return $this->algo;
-    }
-
-    public final function getKey(): string
-    {
-        return $this->key;
-    }
 
     public final function __construct()
     {

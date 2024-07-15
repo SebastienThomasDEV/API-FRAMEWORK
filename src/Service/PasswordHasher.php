@@ -2,8 +2,6 @@
 
 namespace Sthom\Back\Service;
 
-use Sthom\Back\Utils\ServiceInterface;
-
 class PasswordHasher implements ServiceInterface
 {
     private string $algo;
