@@ -3,6 +3,7 @@
 namespace Sthom\Back\Parser;
 
 use Exception;
+use Psr\Http\Message\ServerRequestInterface;
 use ReflectionClass;
 use ReflectionException;
 use ReflectionMethod;
@@ -19,7 +20,7 @@ use Sthom\Back\Utils\ServiceInterface;
  *
  * Fournit une méthode pour lire et récupérer les routes définies dans les contrôleurs.
  */
- class ControllerReader extends AbstractReader
+class ControllerReader extends AbstractReader
 {
     /**
      * Lit les routes définies dans les fichiers de contrôleur.
@@ -49,7 +50,7 @@ use Sthom\Back\Utils\ServiceInterface;
             $controller = new ReflectionClass($fullClassName);
             $methods = self::getControllerMethods($controller);
 
-            foreach ($methods as $method ) {
+            foreach ($methods as $method) {
                 try {
                     $route = $method->getAttributes(Route::class);
                     $middlewares = [];
@@ -93,7 +94,7 @@ use Sthom\Back\Utils\ServiceInterface;
      * @param ReflectionMethod $method La méthode.
      * @return array Un tableau des attributs de route.
      */
-    private static  function getRouteMiddleware(ReflectionMethod $method): array
+    private static function getRouteMiddleware(ReflectionMethod $method): array
     {
         return array_filter(
             $method->getAttributes(),
@@ -118,21 +119,20 @@ use Sthom\Back\Utils\ServiceInterface;
                 Logger::warning("No type for parameter {$parameter->getName()} in method {$method->getName()}.");
                 continue;
             }
-
             try {
                 $class = new ReflectionClass($parameterType->getName());
             } catch (ReflectionException $e) {
                 Logger::error("Error reflecting parameter type {$parameterType->getName()} for parameter {$parameter->getName()} in method {$method->getName()}: " . $e->getMessage());
                 throw $e;
             }
-
-            if ($class->implementsInterface(ServiceInterface::class)) {
-                $service = $parameterType->getName();
-                $service = $service::getInstance();
-                $service->initialize([]);
-                $services[] = $service;
-            } else if ($class->isSubclassOf(AbstractRepository::class)) {
+            if ($class->isSubclassOf(AbstractRepository::class)) {
                 $services[] = Container::getInstance()->get("repositories")[$parameterType->getName()];
+            }
+            if ($class->isSubclassOf(ServiceInterface::class)) {
+                $services[] = Container::getInstance()->get("services")[$parameterType->getName()];
+            }
+            if ($class->implementsInterface(ServerRequestInterface::class)) {
+                $services[$parameter->getName()] = ServerRequestInterface::class;
             }
         }
         return $services;

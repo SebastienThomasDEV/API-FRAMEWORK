@@ -8,10 +8,10 @@ use JetBrains\PhpStorm\NoReturn;
 use Opis\Database\Connection;
 use Opis\Database\Database;
 use Psr\Http\Message\ResponseInterface as ServerResponse;
+use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ServerRequestInterface as ServerRequest;
 use Slim\Factory\AppFactory;
 use Sthom\Back\Annotations\Route;
-use Sthom\Back\Database\Schema;
 use Sthom\Back\Parser\ControllerReader;
 use Sthom\Back\Parser\EntityReader;
 use Sthom\Back\Utils\Logger;
@@ -66,8 +66,6 @@ class Kernel
                 $repositories[$repository] = new $repository($entity['entity'], $entity['table']->getName());
             }
             Container::getInstance()->set("repositories", $repositories);
-            $schema = new Schema($entities);
-            $schema->build($db);
             Container::getInstance()->set(Database::class, $db);
         } catch (Exception $e) {
             $this->handleFatalError($e);
@@ -105,13 +103,20 @@ class Kernel
         $path = $route->getPath();
         $this->app->{$method}($path, function (ServerRequest $serverRequest, ServerResponse $serverResponse) use ($route) {
             try {
+                $services = $route->getParameters();
+                foreach ($services as $key => $service) {
+                    if ($service === ServerRequestInterface::class) {
+                        unset($services[$key]);
+                        $services[] = $serverRequest;
+                    }
+                }
                 foreach ($route->getMiddlewares() as $middleware) {
                     if (!$middleware::trigger($this->app, $serverRequest, $serverResponse)) {
                         return $serverResponse->withHeader('Content-Type', 'application/json')->withStatus(401);
                     }
                 }
                 $controller = $route->getController();
-                $response = $controller->{$route->getFn()}(...$route->getParameters());
+                $response = $controller->{$route->getFn()}(...$services);
                 $serverResponse->getBody()->write(json_encode($response));
                 return $serverResponse->withHeader('Content-Type', 'application/json');
             } catch (Exception|Throwable $e) {

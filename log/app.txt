@@ -494,3 +494,42 @@ CONSTRAINT `articles_pk_id` PRIMARY KEY (`id`)
 `created_at` DATETIME NOT NULL,
 CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
 ) ] 
+2024-07-15 13:25:06 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'articles' already exists [ CREATE TABLE `articles`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`title` VARCHAR(255) NOT NULL,
+`content` VARCHAR(255) NOT NULL,
+CONSTRAINT `articles_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-15 13:25:06 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(255) NOT NULL,
+`email` VARCHAR(255) NOT NULL,
+`password` VARCHAR(255) NOT NULL,
+`role` VARCHAR(255) NOT NULL,
+`created_at` DATETIME NOT NULL,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-15 13:26:30 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'articles' already exists [ CREATE TABLE `articles`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`title` VARCHAR(255) NOT NULL,
+`content` VARCHAR(255) NOT NULL,
+CONSTRAINT `articles_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-15 13:26:30 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(255) NOT NULL,
+`email` VARCHAR(255) NOT NULL,
+`password` VARCHAR(255) NOT NULL,
+`role` VARCHAR(255) NOT NULL,
+`created_at` DATETIME NOT NULL,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-15 13:35:28 : WARNING : Parameter request in method index is not a service.
+2024-07-15 13:36:14 : WARNING : Parameter request in method index is not a service.
+2024-07-15 13:36:31 : WARNING : Parameter request in method index is not a service.
+2024-07-15 13:36:39 : WARNING : Parameter request in method index is not a service.
+2024-07-15 13:36:48 : ERROR : Unknown named parameter $request
+2024-07-15 13:46:33 : ERROR : Too few arguments to function Sthom\Back\controller\UserController::index(), 0 passed in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Kernel.php on line 112 and exactly 1 expected
+2024-07-15 13:47:10 : ERROR : Too few arguments to function Sthom\Back\controller\UserController::index(), 0 passed in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Kernel.php on line 112 and exactly 1 expected
+2024-07-15 13:51:48 : ERROR : Sthom\Back\controller\UserController::index(): Argument #1 ($request) must be of type Psr\Http\Message\ServerRequestInterface, string given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Kernel.php on line 112
+2024-07-15 13:56:30 : ERROR : Method not allowed. Must be one of: OPTIONS

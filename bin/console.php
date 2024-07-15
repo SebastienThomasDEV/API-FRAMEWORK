@@ -3,15 +3,19 @@
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/templates.php';
 
+use Sthom\Back\Database\Schema;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Command\Command;
+use Sthom\Back\Parser\EntityReader;
+use Opis\Database\Connection;
+use Opis\Database\Database;
 
 
 $application = new Application();
-
+$env =  Dotenv\Dotenv::createImmutable(__DIR__ . '/../')->load();
 $application->register('new:controller')
     ->addArgument('name', InputArgument::REQUIRED)
     ->setCode(function (InputInterface $input, OutputInterface $output): int {
@@ -109,6 +113,17 @@ $application->register('new:entity')
         return Command::SUCCESS;
     });
 
+
+$application->register('db:build')
+    ->setCode(function (InputInterface $input, OutputInterface $output): int {
+        $reader = new EntityReader( $_ENV['ENTITY_NAMESPACE'], __DIR__ . $_ENV['ENTITY_DIR']);
+        $db = new Database(new Connection($_ENV['DB_URL'], $_ENV['DB_USER'], $_ENV['DB_PASS']));
+        $entities = $reader->getEntities();
+        $schema = new Schema($entities);
+        $schema->build($db);
+        $output->write('La base de données a bien été construite', true);
+        return Command::SUCCESS;
+    });
 
 try {
     $application->run();
