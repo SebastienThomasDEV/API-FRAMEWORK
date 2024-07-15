@@ -129,7 +129,7 @@ class ControllerReader extends AbstractReader
                 $services[] = Container::getInstance()->get("repositories")[$parameterType->getName()];
             }
             if ($class->isSubclassOf(ServiceInterface::class)) {
-                $services[] = Container::getInstance()->get("services")[$parameterType->getName()];
+                $services[] = $class->newInstance();
             }
             if ($class->implementsInterface(ServerRequestInterface::class)) {
                 $services[$parameter->getName()] = ServerRequestInterface::class;

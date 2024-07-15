@@ -107,7 +107,7 @@ class Kernel
                 foreach ($services as $key => $service) {
                     if ($service === ServerRequestInterface::class) {
                         unset($services[$key]);
-                        $services[] = $serverRequest;
+                        array_unshift($services, $serverRequest);
                     }
                 }
                 foreach ($route->getMiddlewares() as $middleware) {

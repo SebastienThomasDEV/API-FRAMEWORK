@@ -13,15 +13,8 @@ interface ServiceInterface
     /**
      * Initialise le service.
      *
-     * @param array $config Configuration nécessaire pour initialiser le service.
      * @return void
      */
-    public function initialize(array $config): void;
+    public function initialize(): void;
 
-    /**
-     * Vérifie si le service est correctement initialisé.
-     *
-     * @return bool True si le service est initialisé, false sinon.
-     */
-    public function isInitialized(): bool;
 }
