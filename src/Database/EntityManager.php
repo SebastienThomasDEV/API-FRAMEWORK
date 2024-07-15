@@ -189,7 +189,7 @@ class EntityManager
     public final function findOneBy(string $table, array $conditions, string $class): ?AbstractEntity
     {
         try {
-            $result = Container::getInstance()->get(Database::class)->from($table)->where($conditions)->select()->all();
+            $result = Container::getInstance()->get(Database::class)->from($table)->where(key($conditions))->is(current($conditions))->select()->all();
             if (count($result) === 1) {
                 return $class::create(json_decode(json_encode($result[0]), true));
             }

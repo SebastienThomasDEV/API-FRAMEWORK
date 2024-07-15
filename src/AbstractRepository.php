@@ -56,9 +56,9 @@ abstract class AbstractRepository
      * Cette méthode permet de récupérer une entité à partir de son identifiant
      *
      * @param int $id
-     * @return AbstractEntity
+     * @return ?AbstractEntity
      */
-    public final function find(int $id): AbstractEntity
+    public final function find(int $id): ?AbstractEntity
     {
         return EntityManager::getInstance()->find($id, $this->table, $this->entityName);
     }
@@ -88,9 +88,9 @@ abstract class AbstractRepository
      * Cette méthode permet de récupérer une entité qui correspond à un ensemble de conditions
      *
      * @param array $conditions
-     * @return AbstractEntity
+     * @return ?AbstractEntity
      */
-    public final function findOneBy(array $conditions): AbstractEntity
+    public final function findOneBy(array $conditions): ?AbstractEntity
     {
         return EntityManager::getInstance()->findOneBy($this->table, $conditions,$this->entityName);
     }
@@ -104,5 +104,6 @@ abstract class AbstractRepository
     {
         return Container::getInstance()->get(Database::class)->query();
     }
+
 
 }

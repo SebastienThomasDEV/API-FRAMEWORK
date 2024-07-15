@@ -2,6 +2,7 @@
 
 namespace Sthom\Back\Database;
 
+use JetBrains\PhpStorm\NoReturn;
 use Opis\Database\Database;
 use Opis\Database\Schema\CreateTable;
 use Sthom\Back\Annotations\db\AbstractColumn;
@@ -104,6 +105,16 @@ class Schema
         }
     }
 
+    /**
+     * Cette méthode permet de d'ajouter les relations entre les tables
+     *
+     * @return array
+     */
+    #[NoReturn]
+    private function addRelations(CreateTable $tableSchema, array $relations): void
+    {
+        dd($relations);
+    }
     /**
      * Cette méthode permet de récupérer le schéma de la base de données
      *

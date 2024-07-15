@@ -85,8 +85,7 @@ class Kernel
 
     private function configureAppMiddlewares(array $env): void
     {
-        $allowedOrigins = explode(',', $env['ALLOWED_ORIGINS']);
-        $this->app->add(new CorsMiddleware($allowedOrigins));
+        $this->app->add(new CorsMiddleware($env['CORS_ALLOWED_ORIGINS']));
         $this->app->addRoutingMiddleware();
     }
 
