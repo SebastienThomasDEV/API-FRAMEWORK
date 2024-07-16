@@ -1,1 +1,29 @@
-2024-07-12 14:25:02 : ERROR : syntax error, unexpected token "readonly", expecting end of file
+2024-07-15 14:33:21 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'articles' already exists [ CREATE TABLE `articles`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`title` VARCHAR(255) NOT NULL,
+`content` VARCHAR(255) NOT NULL,
+CONSTRAINT `articles_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-15 14:33:21 : ERROR : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists [ CREATE TABLE `users`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(255) NOT NULL,
+`email` VARCHAR(255) NOT NULL,
+`password` VARCHAR(255) NOT NULL,
+`role` VARCHAR(255) NOT NULL,
+`created_at` DATETIME NOT NULL,
+CONSTRAINT `users_pk_id` PRIMARY KEY (`id`)
+) ] 
+2024-07-15 14:43:17 : ERROR : Method not allowed. Must be one of: POST
+2024-07-15 14:43:23 : ERROR : Sthom\Back\controller\UserController::index(): Argument #1 ($request) must be of type Psr\Http\Message\ServerRequestInterface, Sthom\Back\Service\PasswordHasher given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\src\Kernel.php on line 119
+2024-07-15 14:53:57 : ERROR : Method not allowed. Must be one of: GET
+2024-07-15 14:55:57 : ERROR : Method not allowed. Must be one of: GET
+2024-07-15 14:55:59 : ERROR : Method not allowed. Must be one of: GET
+2024-07-15 14:57:38 : ERROR : Too few arguments to function Sthom\Back\Service\JwtManager::decode(), 0 passed in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\app\controller\UserController.php on line 19 and exactly 1 expected
+2024-07-15 14:57:55 : ERROR : hash_hmac(): Argument #1 ($algo) must be a valid cryptographic hashing algorithm
+2024-07-15 14:58:47 : ERROR : Sthom\Back\Service\JwtManager::decode(): Argument #1 ($token) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\app\controller\UserController.php on line 18
+2024-07-15 15:00:36 : ERROR : Sthom\Back\Service\JwtManager::decode(): Argument #1 ($token) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\app\controller\UserController.php on line 18
+2024-07-15 15:00:48 : ERROR : Sthom\Back\Service\JwtManager::jwt_decode(): Return value must be of type array, stdClass returned
+2024-07-15 15:01:05 : ERROR : Sthom\Back\Service\JwtManager::decode(): Argument #1 ($token) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\app\controller\UserController.php on line 18
+2024-07-15 15:01:06 : ERROR : Sthom\Back\Service\JwtManager::decode(): Argument #1 ($token) must be of type string, null given, called in C:\Users\sthom\PhpstormProjects\API-FRAMEWORK\app\controller\UserController.php on line 18
+2024-07-15 15:01:10 : ERROR : Sthom\Back\Service\JwtManager::jwt_decode(): Return value must be of type array, stdClass returned
+2024-07-15 15:01:12 : ERROR : Sthom\Back\Service\JwtManager::jwt_decode(): Return value must be of type array, stdClass returned

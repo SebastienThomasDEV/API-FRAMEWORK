@@ -20,21 +20,14 @@ use Slim\Psr7\Response as SlimResponse;
  */
 class CorsMiddleware implements MiddlewareInterface
 {
-    /**
-     * Tableau des origines autorisées
-     *
-     * @var array
-     */
-    private array $allowedOrigins;
 
     /**
      * Constructeur de la classe CorsMiddleware
      *
-     * @param array $allowedOrigins
+     * @param string $allowedOrigins
      */
-    public function __construct(array $allowedOrigins)
+    public function __construct(private readonly string $allowedOrigins = '*')
     {
-        $this->allowedOrigins = $allowedOrigins;
     }
 
 
@@ -49,8 +42,8 @@ class CorsMiddleware implements MiddlewareInterface
     {
         $response = new SlimResponse();
         $origin = $request->getHeaderLine('Origin');
-
-        if (in_array($origin, $this->allowedOrigins, true)) {
+        $origins = explode(',', $this->allowedOrigins);
+        if (in_array($origin, $origins, true)) {
             $response = $response
                 ->withHeader('Access-Control-Allow-Origin', $origin)
                 ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')

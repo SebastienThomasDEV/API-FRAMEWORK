@@ -5,13 +5,14 @@ namespace Sthom\Back\entity;
 
 use Sthom\Back\Annotations\db\Column;
 use Sthom\Back\Annotations\db\ColumnType;
+use Sthom\Back\Annotations\db\OneToMany;
 use Sthom\Back\Annotations\db\PrimaryKey;
-use Sthom\Back\Annotations\Entity;
+use Sthom\Back\Annotations\UserEntity;
 use Sthom\Back\Database\AbstractEntity;
 use Sthom\Back\Database\UserInterface;
 use Sthom\Back\repository\UserRepository;
 
-#[Entity(name: 'users', repository: UserRepository::class)]
+#[UserEntity(name: 'users', repository: UserRepository::class, identifier: 'email')]
 class User extends AbstractEntity implements UserInterface
 {
 
@@ -33,6 +34,8 @@ class User extends AbstractEntity implements UserInterface
     #[Column('created_at', ColumnType::DATETIME)]
     private ?string $created_at = null;
 
+    #[OneToMany(Article::class, 'articles')]
+    private ?array $articles = [];
 
     public final function getId(): ?int
     {

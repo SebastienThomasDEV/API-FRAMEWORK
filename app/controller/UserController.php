@@ -2,32 +2,22 @@
 
 namespace Sthom\Back\controller;
 
+use JetBrains\PhpStorm\NoReturn;
+use Psr\Http\Message\ServerRequestInterface;
 use Sthom\Back\AbstractController;
-use Sthom\Back\Annotations\middlewares\Required;
 use Sthom\Back\Annotations\Route;
-use Sthom\Back\repository\UserRepository;
+use Sthom\Back\Service\JwtManager;
 
 class UserController extends AbstractController
 {
 
     #[Route(path: '/', method: 'GET')]
-    public final function index(UserRepository $repository): array
+    public final function index(ServerRequestInterface $request, JwtManager $jwtManager): array
     {
-        $user = $repository->findAll();
+        $message = 'Hello World';
         return $this->send([
-            'message' => $user
+            'message' => $message
         ]);
     }
-
-
-    #[Required(role: 'ROLE_USER')]
-    #[Route(path: '/profile', method: 'GET')]
-    public final function profile(): array
-    {
-        return $this->send([
-            'message' => 'Welcome to the user profile',
-        ]);
-    }
-
 
 }
